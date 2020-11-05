@@ -1,0 +1,20 @@
+.AboutMe {
+  margin: 0 20px;
+  letter-spacing: 1px;
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.AboutMe__description {
+  margin: auto;
+}
+
+@media screen and (min-width: 820px) {
+  .AboutMe {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 24px;
+    padding: 24px;
+  }
+}

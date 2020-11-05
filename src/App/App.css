@@ -1,0 +1,19 @@
+.App {
+  position: relative;
+  padding-bottom: 2.5rem;
+  min-height: 100vh;
+}
+
+.home,
+.about,
+.projects {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.About h2,
+.Projects-page h2 {
+  text-align: center;
+}

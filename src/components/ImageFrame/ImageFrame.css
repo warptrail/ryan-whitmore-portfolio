@@ -1,0 +1,29 @@
+.ImageFrame {
+  position: relative;
+  width: 100%;
+  background-image: url('../../img/background.png');
+  background-size: 100%;
+  background-attachment: fixed;
+  height: 150px;
+}
+
+.ImageFrame img {
+  height: 150px;
+  width: 100%;
+  opacity: 0.2;
+  filter: hue-rotate(20deg);
+}
+
+.img-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-header h2 {
+  font-size: 30px;
+  background-color: rgba(42, 38, 44, 0.7);
+  padding: 10px 25px;
+  border-radius: 12px;
+}

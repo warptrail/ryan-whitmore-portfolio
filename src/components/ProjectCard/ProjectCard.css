@@ -1,0 +1,51 @@
+.ProjectCard {
+  text-align: center;
+  background-color: #3a373c;
+  margin: 0 10px;
+  filter: drop-shadow(0px 10px 3px black);
+}
+
+.ProjectCard a {
+  text-decoration: none;
+}
+
+.ProjectCard a h3 {
+  color: white;
+  font-size: 30px;
+  padding: 0 5px;
+}
+
+.ProjectCard-description {
+  background-color: #b9a2c8;
+  padding: 12px;
+  color: #1c1422;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ProjectCard-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.ProjectCard-links a {
+  color: white;
+  background-color: royalblue;
+  padding: 5px 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  margin: 4px 20px;
+}
+
+@media screen and (min-width: 820px) {
+  .ProjectCard {
+    width: 50%;
+    max-width: 500px;
+    margin: 40px 20px;
+  }
+
+  .ProjectCard-links a:hover {
+    background-color: blue;
+  }
+}

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+.ContactDetailed {
+  margin: 10px;
+  font-size: 6vw;
+  font-family: 'Courier Prime', monospace;
+}
+
+.ContactDetailed > * {
+  margin: 20px 0;
+}
+
+.ContactDetailed-data {
+  padding-left: 10px;
+}
+
+.ContactDetailed a {
+  color: #656bff;
+}
+
+.ContactDetailed-label {
+}
+
+.ContactDetailed-resume {
+  margin-top: 42px;
+  font-size: 6.2vw;
+}
+
+@media screen and (min-width: 820px) {
+  .ContactDetailed {
+    margin-left: 24px;
+    font-size: 28px;
+  }
+
+  .ContactDetailed-resume {
+    font-size: 30px;
+  }
+}
