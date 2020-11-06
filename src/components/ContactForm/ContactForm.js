@@ -46,7 +46,7 @@ function ContactForm() {
       </div>
       <div className="group">
         <div className="item">
-          <textarea id="form-message" name="message" />
+          <textarea id="message" name="message" />
         </div>
       </div>
       <div className="group">
