@@ -40,7 +40,7 @@ function ContactForm() {
       <div className="group">
         <div className="item">
           <label className="center text-area-label" htmlFor="message">
-            What's on your mind?
+            What is on your mind?
           </label>
         </div>
       </div>
@@ -52,7 +52,6 @@ function ContactForm() {
       <div className="group">
         <div className="buttons item">
           <button type="submit">Submit</button>
-          <button type="reset">Reset</button>
         </div>
       </div>
     </form>

@@ -28,3 +28,25 @@
   padding: 10px 25px;
   border-radius: 12px;
 }
+
+.filter1 {
+  filter: hue-rotate(20deg);
+}
+.filter2 {
+  filter: hue-rotate(90deg);
+}
+.filter3 {
+  filter: hue-rotate(120deg);
+}
+.filter4 {
+  filter: hue-rotate(160deg);
+}
+.filter5 {
+  filter: hue-rotate(210deg);
+}
+.filter6 {
+  filter: hue-rotate(280deg);
+}
+.filter7 {
+  filter: hue-rotate(320deg);
+}
