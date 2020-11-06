@@ -13,26 +13,20 @@ export const SidebarData = [
   },
   {
     title: 'About',
-    path: '/about',
+    path: '#about',
     icon: <FaIcons.FaCoffee />,
     className: 'nav-text'
   },
   {
     title: 'Projects',
-    path: '/projects',
+    path: '#projects',
     icon: <AiIcons.AiOutlineCode />,
     className: 'nav-text'
   },
   {
     title: 'Contact',
-    path: '/contact',
+    path: '#contact',
     icon: <FaIcons.FaMailBulk />,
-    className: 'nav-text'
-  },
-  {
-    title: 'Blog',
-    path: '/blog',
-    icon: <FaIcons.FaNewspaper />,
     className: 'nav-text'
   }
 ];

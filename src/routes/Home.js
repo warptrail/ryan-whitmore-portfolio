@@ -11,11 +11,11 @@ function Home() {
   return (
     <div className="Home">
       <Hero />
-      <ImageFrame headerText="About" />
+      <ImageFrame headerText="About" anchorId="about" />
       <AboutMe />
-      <ImageFrame headerText="Projects" />
+      <ImageFrame headerText="Projects" anchorId="projects" />
       <ProjectsGallery />
-      <ImageFrame headerText="Contact" />
+      <ImageFrame headerText="Contact" anchorId="contact" />
       <Contact />
     </div>
   );

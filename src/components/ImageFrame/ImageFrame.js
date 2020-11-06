@@ -3,10 +3,10 @@ import placeholder from '../../img/overlay.png';
 import './ImageFrame.css';
 
 function ImageFrame(props) {
-  const { headerText } = props;
+  const { headerText, anchorId } = props;
 
   return (
-    <div className="ImageFrame">
+    <div className="ImageFrame" id={anchorId}>
       <img
         src={placeholder}
         alt="h2 sub-header overlay for color-changing effect"
