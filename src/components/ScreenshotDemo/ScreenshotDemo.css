@@ -1,0 +1,9 @@
+.ScreenshotDemo {
+  width: 100%;
+  text-align: center;
+}
+
+.ScreenshotDemo img {
+  width: 90%;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,59 @@
+form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+form p,
+form label {
+  margin: auto 0;
+  padding: 5px;
+  font-size: 20px;
+}
+
+textarea {
+  margin-top: 20px;
+}
+
+form input[type='number'],
+form input[type='text'] {
+  height: 30px;
+  width: 100%;
+  font-size: 20px;
+  padding: 12px;
+  border: 2px solid #e1ddf7;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+form .txt-input input {
+  width: 100%;
+}
+
+.class-select .item {
+  justify-content: center;
+  width: 100%;
+}
+
+form textarea {
+  height: 4.75rem;
+  width: 100%;
+  border-radius: 10px;
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  text-align: center;
+}
+
+form button {
+  width: 90%;
+  height: 40px;
+  margin: 5px 0;
+  font-size: 26px;
+  font-weight: bold;
+  background-color: rgb(89, 139, 184);
+  cursor: pointer;
+  border-radius: 10px;
+}

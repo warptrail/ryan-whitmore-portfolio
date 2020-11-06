@@ -24,10 +24,13 @@
   width: 30%;
   margin: 0 auto;
   text-align: center;
+  cursor: pointer;
 }
 
-.Contact-img-frame img {
+.Contact-img-frame a {
   width: 80%;
   max-width: 150px;
   filter: brightness(2);
+  font-size: 70px;
+  color: black;
 }

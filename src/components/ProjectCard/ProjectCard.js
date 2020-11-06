@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 
-import LightBox from '../LightBox/LightBox';
+import ScreenshotDemo from '../ScreenshotDemo/ScreenshotDemo';
 
 import './ProjectCard.css';
 
@@ -17,15 +17,16 @@ function ProjectCard(props) {
     demoLink,
     description,
     githubLink,
-    screenshot
+    demoImg,
+    screenshots
   } = props.projectsData;
 
   const renderDefaultCard = () => {
     return (
       <div className="ProjectCard">
         <div
-          className="screenshot-div"
-          style={{ backgroundImage: `url(${screenshot})` }}
+          className="project-header-img"
+          style={{ backgroundImage: `url(${demoImg})` }}
         >
           <a target="_blank" rel="noopener noreferrer" href={demoLink}>
             <h3>{title}</h3>
@@ -47,7 +48,7 @@ function ProjectCard(props) {
           type="button"
           onClick={showScreenshots}
         >
-          Toggle Screenshots
+          Screenshots
         </button>
       </div>
     );
@@ -56,9 +57,11 @@ function ProjectCard(props) {
   const renderScreenshotCard = () => {
     return (
       <div className="screenshots">
-        <button onClick={showScreenshots}> close</button>
-        <p>Stuff and things and stuff and things</p>
-        <LightBox />
+        <button type="button" onClick={showScreenshots}>
+          &#8592; Go back
+        </button>
+        <h4 className="screenshots-title">{title}</h4>
+        <ScreenshotDemo screenshots={screenshots} />
       </div>
     );
   };

@@ -1,8 +1,7 @@
 import React from 'react';
+import * as FaIcons from 'react-icons/fa';
 
-import linkedInImg from '../../img/linkedin-lg-3.png';
-import githubImg from '../../img/github-lg-3.png';
-import emailImg from '../../img/email-lg-3.png';
+import ContactForm from '../ContactForm/ContactForm';
 
 import './Contact.css';
 
@@ -17,7 +16,8 @@ function Contact() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={linkedInImg} alt="linkedIn link" />
+            <FaIcons.FaLinkedin />
+            <span className="hidden">o</span>
           </a>
         </div>
         <div className="Contact-img-frame">
@@ -26,15 +26,18 @@ function Contact() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={githubImg} alt="linkedIn link" />
+            <FaIcons.FaGithub />
+            <span className="hidden">o</span>
           </a>
         </div>
         <div className="Contact-img-frame">
           <a href="mailto:ryan@whitmorespace.com">
-            <img src={emailImg} alt="linkedIn link" />
+            <FaIcons.FaEnvelope />
+            <span className="hidden">o</span>
           </a>
         </div>
       </div>
+      <ContactForm />
     </div>
   );
 }
