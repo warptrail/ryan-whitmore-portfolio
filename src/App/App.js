@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Home from '../routes/Home';
-import NavBar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
-
 import './App.css';
 
 export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <main>
-          <NavBar />
-          <Switch>
-            <Route path="/" exact component={Home} />
-          </Switch>
-        </main>
-        <Footer />
+        <h1>Hello, World!</h1>
+        <p>
+          <a href="https://www.linkedin.com/in/whitmorespaceindustries/">
+            LinkedIn
+          </a>
+        </p>
+        <p>
+          <a href="https://github.com/warptrail">Github</a>
+        </p>
       </div>
     );
   }
