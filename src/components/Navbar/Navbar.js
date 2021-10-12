@@ -18,7 +18,7 @@ function Navbar() {
       <IconContext.Provider value={{ color: '#E9EAFF' }}>
         <div className="Navbar">
           <Link to="/" className="mobile-logo">
-            <span>Ryan Whitmore</span>
+            <span>Lord of the Flame</span>
           </Link>
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />

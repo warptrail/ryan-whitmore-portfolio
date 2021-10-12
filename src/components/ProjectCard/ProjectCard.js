@@ -58,7 +58,7 @@ function ProjectCard(props) {
     return (
       <div className="screenshots">
         <button type="button" onClick={showScreenshots}>
-          &#8592; Go back
+          &#8592; Return to the Void
         </button>
         <h4 className="screenshots-title">{title}</h4>
         <ScreenshotDemo screenshots={screenshots} />
