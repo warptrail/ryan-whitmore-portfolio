@@ -24,7 +24,7 @@ export const SidebarData = [
     className: 'nav-text'
   },
   {
-    title: 'Contact',
+    title: 'Super',
     path: '#contact',
     icon: <FaIcons.FaMailBulk />,
     className: 'nav-text'
