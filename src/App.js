@@ -7,6 +7,7 @@ const App = () => {
     <div className="App">
       <h1>Ryan Whitmore</h1>
       <h2>Web Developer</h2>
+      <hr />
       <h3>
         <a href="https://www.linkedin.com/in/whitmorespaceindustries/">
           LinkedIn
