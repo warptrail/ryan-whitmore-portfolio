@@ -13,3 +13,14 @@ body {
   background-color: #262d34;
   color: #e9eaff;
 }
+
+a {
+  color: white;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
