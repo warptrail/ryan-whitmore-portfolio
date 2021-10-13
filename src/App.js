@@ -19,6 +19,8 @@ const App = () => {
       <div className="frame">
         <img src={logo} alt="logo" />
       </div>
+
+      <p>Hello, Twitter world</p>
     </div>
   );
 };
