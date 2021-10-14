@@ -1,28 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import logo from './img/ryanwhitmore.png';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 
-const App = () => {
+import Home from './routes';
+import LoginPage from './routes/LoginPage';
+import SignUpPage from './routes/SignUpPage';
+import FormTemplatePage from './routes/FormTemplatePage';
+import AppGalleryPage from './routes/AppGalleryPage';
+
+function App() {
+  // const { pathname, hash } = useLocation();
+
+  // state for the main menu being open in mobile
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  // toggle state function
+  const toggle = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
+  // TODO Combine Nav and Sidebar into header with dynamic Link
   return (
-    <div className="App">
-      <h1>Ryan Whitmore</h1>
-      <h2>Web Developer</h2>
-      <hr />
-      <h3>
-        <a href="https://www.linkedin.com/in/whitmorespaceindustries/">
-          LinkedIn
-        </a>
-      </h3>
-      <h3>
-        <a href="https://github.com/warptrail">Github</a>
-      </h3>
-      <div className="frame">
-        <img src={logo} alt="logo" />
-      </div>
+    <Router>
+      <Navbar toggle={toggle} />
+      <Sidebar isNavOpen={isNavOpen} toggle={toggle} />
 
-      <p>Hello, Twitter world</p>
-    </div>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/signup" component={SignUpPage} />
+        <Route path="/app-gallery" component={AppGalleryPage} />
+        <Route path="/form-template" component={FormTemplatePage} />
+      </Switch>
+    </Router>
   );
-};
+}
 
 export default App;
