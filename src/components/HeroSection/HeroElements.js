@@ -6,8 +6,8 @@ export const HeroContainer = styled.div`
   background: #0c0c0c;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 0 30px;
+  /* align-items: center; */
+  padding: 100px 30px;
   height: 800px;
   position: relative;
   z-index: 1;
@@ -81,33 +81,51 @@ export const HeroContent = styled.div`
   align-items: center;
 `;
 
+export const NameBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+export const MyLogo = styled.img`
+  width: 100%;
+  max-width: 700px;
+`;
+export const Name = styled.p`
+  color: #fff;
+  padding-left: 12px;
+  font-size: 1.5rem;
+  font-family: 'Roboto Condensed', sans-serif;
+`;
+
 export const HeroH1 = styled.h1`
   color: #fff;
-  font-size: 48px;
+  font-size: 46px;
   text-align: center;
+  margin-top: 24px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) {
     font-size: 40px;
   }
 
-  @media screen and(max-width: 480px) {
-    font-size: 32px;
+  @media screen and(min-width: 480px) {
+    font-size: 38px;
   }
 `;
 
 export const HeroP = styled.p`
-  margin-top: 24px;
+  margin-top: 2rem;
   color: #fff;
-  font-size: 24px;
+  font-size: 30px;
   text-align: center;
-  max-width: 600px;
-  margin: 10px auto;
+  font-family: 'Jost', sans-serif;
 
-  @media screen and (max-width: 768px) {
+  line-height: 1.2;
+
+  @media screen and (min-width: 768px) {
     font-size: 24px;
   }
 
-  @media screen and(max-width: 480px) {
+  @media screen and(min-width: 480px) {
     font-size: 18px;
   }
 `;

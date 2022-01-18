@@ -4,13 +4,11 @@ import { Link as LinkRouter } from 'react-router-dom';
 const colorChange = (scrollNav, isFormPage) => {
   if (!isFormPage) {
     if (scrollNav) {
-      return '#000';
-    } else {
-      return 'transparent';
+      return '#010606';
     }
-  } else {
-    return '#000';
+    return 'transparent';
   }
+  return '#000';
 };
 
 export const Nav = styled.nav`
@@ -22,7 +20,7 @@ export const Nav = styled.nav`
   margin-top: ${({ isHomePage }) => (isHomePage ? '-80px' : '0px')};
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   font-size: 1.3rem;
   position: sticky;
   top: 0rem;
@@ -49,11 +47,16 @@ export const NavLogo = styled(LinkRouter)`
   cursor: pointer;
   font-size: 1.5rem;
   display: flex;
-  align-items: center;
-  margin-left: 24px;
-  margin-right: 12px;
+  /* align-items: center; */
+  /* margin-left: 24px;
+  margin-right: 12px; */
   font-weight: bold;
   text-decoration: none;
+`;
+
+export const NavLogoImg = styled.img`
+  width: 100%;
+  padding: 0 5px;
 `;
 
 export const NavLogoText = styled.span`

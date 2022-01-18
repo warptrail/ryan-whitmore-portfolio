@@ -1,9 +1,8 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const InfoContainer = styled.div`
   color: #fff;
   background: ${({ lightBg }) => (lightBg ? '#f9f9f9' : '#010606')};
-
   @media screen and (max-width: 768px) {
     padding: 100px 0;
   }
@@ -12,7 +11,7 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 860px;
+  /* height: 860px; */
   width: 100%;
   max-width: 1100px;
   margin-right: auto;
@@ -35,7 +34,7 @@ export const InfoRow = styled.div`
 `;
 
 export const Column1 = styled.div`
-  margin-bottom: 15px;
+  margin-bottom: 80px;
   padding: 0 15px;
   grid-area: col1;
 `;
@@ -48,32 +47,40 @@ export const Column2 = styled.div`
 export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
 `;
 
-export const TopLine = styled.p`
+export const TopLine = styled.h2`
   color: #01bf71;
   font-size: 16px;
   line-height: 16px;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin: 20px 0;
 `;
 
-export const Heading = styled.h1`
+export const Heading = styled.h3`
   margin-bottom: 24px;
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
   color: ${({ lightText }) => (lightText ? '#f7f8fa' : '#010606')};
 
-  @media screen and (max-width: 480px) {
+  @media screen and (min-width: 480px) {
     font-size: 32px;
   }
 `;
 
-export const Subtitle = styled.p`
+export const AboutText = styled.p`
+  max-width: 440px;
+  margin-bottom: 35px;
+  font-size: 18px;
+  line-height: 24px;
+  color: ${({ darkText }) => (darkText ? '#010606' : '#fff')};
+`;
+
+export const AboutLink = styled.a`
   max-width: 440px;
   margin-bottom: 35px;
   font-size: 18px;
@@ -87,12 +94,79 @@ export const BtnWrap = styled.div`
 `;
 
 export const ImgWrap = styled.div`
-  max-width: 555px;
+  max-width: 400px;
   height: 100%;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 `;
 
 export const Img = styled.img`
   width: 100%;
   margin: 0 0 10px 0;
   padding-right: 0;
+`;
+
+// ! Contact Button Nav
+
+const breatheAnimation = keyframes`
+  0% {background: #24CB34}
+  20% {background: #24CBA6}
+  40% {background: #BC6DD6}
+  60% {background: #8CE4AF}
+  80% {background: #24CBA6}
+  100% {background: #24CB34}
+  `;
+
+export const ContactWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  background: #8fe480;
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  z-index: 99;
+  animation-name: ${breatheAnimation};
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+
+  @media screen and (min-width: 768px) {
+    position: static;
+    width: 100%;
+    border-radius: 10px;
+  }
+`;
+
+export const ContactContainer = styled.div`
+  display: flex;
+  padding: 10px 4px;
+  width: 100%;
+
+  > * {
+    &:last-child {
+      border-right: none;
+    }
+  }
+`;
+
+export const ContactBtn = styled.button`
+  padding: 12px;
+  font-size: clamp(1.3125rem, 0.9792rem + 1.6667vw, 1.5rem);
+  background: none;
+  border: none;
+  border-right: 1px solid black;
+  color: #030808;
+  cursor: pointer;
+  outline: inherit;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    padding: 4px;
+  }
+
+  &:hover {
+    color: white;
+    background: #37052c;
+    border-right: none;
+    border-radius: 10px;
+  }
 `;

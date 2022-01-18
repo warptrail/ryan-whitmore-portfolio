@@ -10,10 +10,14 @@ import {
   TextWrapper,
   TopLine,
   Heading,
-  Subtitle,
+  AboutText,
   BtnWrap,
   ImgWrap,
   Img,
+  AboutLink,
+  ContactContainer,
+  ContactWrap,
+  ContactBtn
 } from './InfoElements';
 
 const InfoSection = ({
@@ -24,14 +28,19 @@ const InfoSection = ({
   lightText,
   headline,
   darkText,
-  description,
+  description1,
+  description2,
+  link,
   buttonLabel,
   img,
   alt,
   primary,
   dark,
-  dark2,
+  dark2
 }) => {
+  const onClickSayHello = () => {
+    console.log('Ahoy there!');
+  };
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -41,25 +50,33 @@ const InfoSection = ({
               <TextWrapper>
                 <TopLine>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headline}</Heading>
-                <Subtitle darkText={darkText}>{description}</Subtitle>
-                <BtnWrap>
-                  <Button
-                    to="/"
-                    exact="true"
-                    offset={-80}
-                    primary={primary ? 1 : 0}
-                    dark={dark ? 1 : 0}
-                    dark2={dark2 ? 1 : 0}
+                <AboutText darkText={darkText}>
+                  {description1}
+                  <AboutLink
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={link[1]}
                   >
-                    {buttonLabel}
-                  </Button>
-                </BtnWrap>
+                    {link[0]}
+                  </AboutLink>
+                </AboutText>
+                <AboutText>{description2}</AboutText>
               </TextWrapper>
+
+              <ContactWrap>
+                <ContactContainer>
+                  <ContactBtn onClick={onClickSayHello}>Say Hello</ContactBtn>
+                  <ContactBtn>Contact</ContactBtn>
+                  <ContactBtn>Bio</ContactBtn>
+                </ContactContainer>
+              </ContactWrap>
             </Column1>
             <Column2>
-              <ImgWrap>
-                <Img src={img} alt={alt} />
-              </ImgWrap>
+              <TextWrapper>
+                <ImgWrap>
+                  <Img src={img} alt={alt} />
+                </ImgWrap>
+              </TextWrapper>
             </Column2>
           </InfoRow>
         </InfoWrapper>

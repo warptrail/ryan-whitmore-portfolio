@@ -67,6 +67,12 @@ export const FooterLink = styled(LinkRouter)`
   }
 `;
 
+export const CreditsBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const SocialMedia = styled.section`
   max-width: 1000px;
   width: 100%;

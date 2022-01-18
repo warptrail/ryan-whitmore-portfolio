@@ -1,15 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSection';
-import ServicesSection from '../components/ServicesSection';
+import ProjectSection from '../components/ProjectSection';
 import Footer from '../components/Footer';
-import { homeObjOne, homeObjTwo } from '../Data';
+import { aboutObject } from '../Data';
+import HelloForm from '../components/HelloForm';
 
-const Home = () => {
+const Home = ({ isNavOpen }) => {
+  // https://stackoverflow.com/questions/53158796/get-scroll-position-with-reactjs
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const { pathname, hash } = useLocation();
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  /*
   // Code to scroll to specific id when changing route
   // https://stackoverflow.com/questions/40280369/use-anchors-with-react-router
-  const { pathname, hash } = useLocation();
+
   useEffect(() => {
     // if not a hash link, scroll to top
     if (hash === '') {
@@ -25,17 +44,30 @@ const Home = () => {
         }
       }, 0);
     }
-  }, [pathname]); // do this on route change
-  return (
-    <>
+  }, [pathname, hash]); // do this on route change
+  */
+
+  /*
+  const hideOverflow = (bool) => {
+    if (bool) {
+      return 'hide';
+    }
+    return '';
+  };
+*/
+
+  const renderHomePage = (
+    <div id="top" className="home-container">
       <HeroSection />
-      <InfoSection {...homeObjOne} />
-      <InfoSection {...homeObjTwo} />
-      {/* <InfoSection {...homeObjThree} /> */}
-      <ServicesSection />
+      <InfoSection {...aboutObject} />
+
+      <ProjectSection />
+      <HelloForm id="helloForm" />
       <Footer />
-    </>
+    </div>
   );
+
+  return <>{renderHomePage}</>;
 };
 
 export default Home;

@@ -1,35 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { animateScroll as scroll } from 'react-scroll';
-import { FaBars, FaRoad } from 'react-icons/fa';
+
+import { FaBars } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 
 import {
   Nav,
   NavbarContainer,
   NavLogo,
-  NavLogoText,
   MobileIcon,
+  NavLogoImg
 } from './NavbarElements';
 
-import DynamicMenu from '../DynamicMenu';
+import logo from '../../images/ryanwhitmore.png';
 
 const Navbar = ({ toggle }) => {
   const currentURL = useLocation();
-  console.log(currentURL);
   const [scrollNav, setScrollNav] = useState(false);
 
   // when past a particular point, trigger the transparent nav background
   const changeNav = () => {
-    if (window.scrollY > 80) {
+    if (window.scrollY > 150) {
       setScrollNav(true);
     } else {
       setScrollNav(false);
     }
   };
 
-  const toggleHome = () => {
-    scroll.scrollToTop();
-  };
+  // const toggleHome = () => {
+  //   scroll.scrollToTop();
+  // };
 
   useEffect(() => {
     window.addEventListener('scroll', changeNav);
@@ -37,17 +36,10 @@ const Navbar = ({ toggle }) => {
 
   return (
     <>
-      <Nav
-        scrollNav={scrollNav}
-        isHomePage={currentURL.pathname === '/'}
-        isFormPage={currentURL.pathname === '/form-template'}
-      >
+      <Nav scrollNav={scrollNav} isHomePage={currentURL.pathname === '/'}>
         <NavbarContainer>
-          <NavLogo to="/" onClick={toggleHome}>
-            <NavLogoText>warptrail</NavLogoText>
-            <FaRoad />
-          </NavLogo>
-          <DynamicMenu urlPathname={currentURL.pathname} mobileView={false} />
+          <NavLogo to="/">{scrollNav ? <NavLogoImg src={logo} /> : ''}</NavLogo>
+
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>

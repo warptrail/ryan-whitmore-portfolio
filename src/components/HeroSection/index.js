@@ -10,9 +10,13 @@ import {
   HeroBtnWrapper,
   ArrowUp,
   ArrowRight,
+  NameBox,
+  MyLogo,
+  Name
 } from './HeroElements';
 import { Button } from '../ButtonElement';
 import backgroundImage from '../../images/neon-background.png';
+import myLogo from '../../images/ryanwhitmore.png';
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -29,19 +33,24 @@ const HeroSection = () => {
         {/* <PhotoBg src={backgroundImage} /> */}
       </HeroBg>
       <HeroContent>
-        <HeroH1>Ultra Default</HeroH1>
+        <NameBox>
+          <MyLogo src={myLogo} />
+        </NameBox>
+        <HeroH1>Frontend Web Developer</HeroH1>
         <HeroP>
-          This is the default Warptrail web page and application template.
+          Here to help you make the most out of the World (Wide Web)
         </HeroP>
         <HeroBtnWrapper>
           <Button
-            to="/app-gallery"
+            to="about"
+            smooth={true}
+            duration={500}
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary="true"
             dark="true"
           >
-            Get started {hover ? <ArrowUp /> : <ArrowRight />}
+            Let&apos;s Connect{hover ? <ArrowUp /> : <ArrowRight />}
           </Button>
         </HeroBtnWrapper>
       </HeroContent>

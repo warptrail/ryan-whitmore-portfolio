@@ -1,86 +1,72 @@
-import image1 from './images/undraw-img-1.svg';
-import image2 from './images/undraw-img-2.svg';
-import image3 from './images/undraw-img-3.svg';
-import Icon1 from './images/undraw-img-7.svg';
-import Icon2 from './images/undraw-img-6.svg';
-import Icon3 from './images/undraw-img-5.svg';
+import profilePic from './images/new-profile.jpg';
+import uSLogo from './images/us-geography.png';
+import currencyLogo from './images/currency.png';
+import trackerLogo from './images/tracker.png';
+import randomNeonLogo from './images/random-neon.png';
 
-export const homeObjOne = {
+import project1Screenshot1 from './images/project-1-screenshot-1.png';
+import project1Screenshot2 from './images/project-1-screenshot-2.png';
+
+export const aboutObject = {
   id: 'about',
   menuName: 'About',
   lightBg: false,
   lightText: true,
   lightTextDesc: true,
-  topLine: 'Premium Processes',
-  headline: 'Refine your system operations with optimized traction',
-  description:
-    'Get access to our exclusive app that allows you to send unlimited packets across our utility network.',
-  buttonLabel: 'Get Started',
+  topLine: 'About Me',
+  headline: 'Your humble internet enthusiast',
+  description1: `Residing in Oakland, CA and trained in the ways of full-stack web development (with a keen interest in frontend) by the fine folks at `,
+  link: ['Thinkful', 'https://www.thinkful.com/'],
+  description2: `I am a driven developer / designer experienced in using React, Node, Express and Postgres to build modern, full-stack web apps. On a mission to seek out new ways of growth and improvement, to boldly code and expand the frontiers of cyberspace.`,
+  description3: `I studied Geography `,
+  buttonLabel: 'Contact Me',
   imgStart: false,
-  img: image1,
+  img: profilePic,
   alt: 'Car',
   dark: true,
   primary: true,
-  darkText: false,
+  darkText: false
 };
 
-export const homeObjTwo = {
-  id: 'discover',
-  menuName: 'Discover',
-  lightBg: true,
-  lightText: false,
-  lightTextDesc: true,
-  topLine: 'Graphite Nano-Crystals',
-  headline: 'Advanced Quantum Technology at your Fingertips',
-  description:
-    'Handheld bulkhead scrubbing is a thing of the past with our new micro-fiber automated drone bots.',
-  buttonLabel: 'Learn More',
-  imgStart: true,
-  img: image2,
-  alt: 'Car',
-  dark: false,
-  primary: false,
-  darkText: true,
-};
-
-export const servicesData = [
+export const projectData = [
   {
-    id: 'service',
-    name: 'Widgets',
-    description: 'Widgets are useful for tasks',
-    icon: Icon1,
+    id: 'project-1',
+    name: 'US Geography Reference',
+    link: '/projects/us-geography',
+    description:
+      'An information reference interface for each of the 50 states of the USA. Featured is the custom API made with Express to pull up the routes to specified data. Also some of my digital artwork in the fossil sections.',
+    icon: uSLogo,
+    repoLink: 'https://github.com/warptrail/us-geography-frontend',
+    demoLink: 'https://usa-geography.vercel.app/',
+    screenshots: [project1Screenshot1, project1Screenshot2]
   },
   {
-    id: 'service',
-    name: 'Trinkets',
-    description: 'Trinkets increase production value',
-    icon: Icon2,
+    id: 'project-2',
+    name: 'Currency Toolkit',
+    link: '/projects/currency-toolkit',
+    description:
+      'This React App makes fetch requests to stocks and currency converter APIs as well as serves as a situational calculator for various monetary needs. ',
+    icon: currencyLogo,
+    repoLink: 'https://github.com/warptrail/currency-toolkit',
+    demoLink: 'https://currency-toolkit-warptrail.vercel.app/'
   },
   {
-    id: 'service',
-    name: 'Relics',
-    description: 'Relics will boost absorption rates',
-    icon: Icon3,
+    id: 'project-3',
+    name: 'Tracker-400',
+    link: '/projects/tracker-400',
+    description:
+      'A time and habit tracker. Currently still in development. Uses dayjs to create an interactive calendar to visualize when a reoccurring event happens. Analyzes the count, frequency across time-spans.',
+    icon: trackerLogo
   },
+  {
+    id: 'project-4',
+    name: 'Random Neon Machine',
+    link: '/projects/random-neon',
+    description:
+      'This app is more of an art project. Made with vanilla JS and HTML canvas to draw random shapes rapidly throughout the screen.',
+    icon: randomNeonLogo
+  }
 ];
-
-export const homeObjThree = {
-  id: 'discover-continued',
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
-  topLine: 'Monetary Stability',
-  headline: 'I need your clothes, boots and your motorcycle',
-  description:
-    'In a time of tremendous uncertainty and strife, you should not have to worry about the loyalty of your laundry detergent.',
-  buttonLabel: 'Activate Now',
-  imgStart: false,
-  img: image3,
-  alt: 'Car',
-  dark: true,
-  primary: true,
-  darkText: false,
-};
 
 export const mainMenuData = [
   {
@@ -88,51 +74,20 @@ export const mainMenuData = [
     name: 'About',
     toScroll: 'about',
     toRoute: '/#about',
-    linkStyle: 'home-scroll',
+    linkStyle: 'home-scroll'
   },
   {
     id: 'discover',
     name: 'Discover',
     toScroll: 'discover',
     toRoute: '/#discover',
-    linkStyle: 'home-scroll',
+    linkStyle: 'home-scroll'
   },
   {
     id: 'services',
     name: 'Services',
     toScroll: 'services',
     toRoute: '/#services',
-    linkStyle: 'home-scroll',
-  },
-  {
-    id: 'signup',
-    name: 'Sign Up',
-    toScroll: 'signup',
-    toRoute: '/signup',
-    linkStyle: 'green-router',
-  },
-  {
-    id: 'login',
-    name: 'Log In',
-    toScroll: 'login',
-    toRoute: '/login',
-    linkStyle: 'btn-green-router',
-  },
-];
-
-export const appMenuData = [
-  {
-    id: 'appGallery',
-    name: 'Apps',
-    toScroll: '',
-    toRoute: '/app-gallery',
-    linkStyle: 'app-link-green',
-  },
-  {
-    id: 'form',
-    name: 'Form',
-    toScroll: '',
-    toRoute: '/form-template',
-    linkStyle: 'app-link-green',
-  },
+    linkStyle: 'home-scroll'
+  }
 ];

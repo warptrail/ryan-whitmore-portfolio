@@ -6,7 +6,7 @@ import {
   FaInstagram,
   FaYoutube,
   FaTwitter,
-  FaLinkedin,
+  FaLinkedin
 } from 'react-icons/fa';
 import {
   FooterContainer,
@@ -22,7 +22,9 @@ import {
   WebsiteRights,
   SocialIcons,
   SocialIconLink,
+  CreditsBox
 } from './FooterElements';
+import Socials from '../Socials';
 
 const Footer = () => {
   const toggleHome = () => {
@@ -33,6 +35,7 @@ const Footer = () => {
     <>
       <FooterContainer>
         <FooterWrap>
+          <Socials />
           <FooterLinksContainer>
             <FooterLinksWrapper>
               <FooterLinkItems>
@@ -71,33 +74,15 @@ const Footer = () => {
               </FooterLinkItems>
             </FooterLinksWrapper>
           </FooterLinksContainer>
-          <SocialMedia>
-            <SocialMediaWrap>
-              <SocialLogo to="/" onClick={toggleHome}>
-                Warptrail
-              </SocialLogo>
-              <WebsiteRights>
-                warptrail © {new Date().getFullYear()} All rights reserved.
-              </WebsiteRights>
-              <SocialIcons>
-                <SocialIconLink href="/" target="_blank" aria-label="Facebook">
-                  <FaFacebook />
-                </SocialIconLink>
-                <SocialIconLink href="/" target="_blank" aria-label="Instagram">
-                  <FaInstagram />
-                </SocialIconLink>
-                <SocialIconLink href="/" target="_blank" aria-label="Twitter">
-                  <FaTwitter />
-                </SocialIconLink>
-                <SocialIconLink href="/" target="_blank" aria-label="Youtube">
-                  <FaYoutube />
-                </SocialIconLink>
-                <SocialIconLink href="/" target="_blank" aria-label="Linkedin">
-                  <FaLinkedin />
-                </SocialIconLink>
-              </SocialIcons>
-            </SocialMediaWrap>
-          </SocialMedia>
+
+          <CreditsBox>
+            <SocialLogo to="/" onClick={toggleHome}>
+              Warptrail
+            </SocialLogo>
+            <WebsiteRights>
+              warptrail © {new Date().getFullYear()} All rights reserved.
+            </WebsiteRights>
+          </CreditsBox>
         </FooterWrap>
       </FooterContainer>
     </>
