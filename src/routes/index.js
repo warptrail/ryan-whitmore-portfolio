@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSection';
 import ProjectSection from '../components/ProjectSection';
-import Footer from '../components/Footer';
 import { aboutObject } from '../Data';
 import HelloForm from '../components/HelloForm';
 
@@ -17,13 +16,13 @@ const Home = ({ isNavOpen }) => {
     setScrollPosition(position);
   };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll, { passive: true });
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
   /*
   // Code to scroll to specific id when changing route
@@ -57,13 +56,13 @@ const Home = ({ isNavOpen }) => {
 */
 
   const renderHomePage = (
-    <div id="top" className="home-container">
+    <div id="top" className="home-container" style={{ overflow: 'hidden' }}>
       <HeroSection />
       <InfoSection {...aboutObject} />
 
       <ProjectSection />
       <HelloForm id="helloForm" />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 

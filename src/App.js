@@ -6,6 +6,8 @@ import MobileNav from './components/MobileNav';
 
 import Home from './routes';
 import ProjectPage from './routes/ProjectPage';
+import ContactPage from './routes/ContactPage';
+import Footer from './components/Footer';
 
 function App() {
   // const { pathname, hash } = useLocation();
@@ -49,8 +51,11 @@ function App() {
           exact
         />
 
+        <Route path="/contact" component={ContactPage} />
+
         <Route path="/projects/:projectId" component={ProjectPage} />
       </Switch>
+      <Footer />
     </Router>
   );
 }

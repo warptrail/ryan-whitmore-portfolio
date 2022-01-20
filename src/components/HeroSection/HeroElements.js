@@ -8,9 +8,11 @@ export const HeroContainer = styled.div`
   justify-content: center;
   /* align-items: center; */
   padding: 100px 30px;
-  height: 800px;
+  height: 100vh;
   position: relative;
   z-index: 1;
+  /* opacity: ${(props) => (props.cta ? '30%' : '100%')}; */
+
 
   :before {
     content: '';
@@ -40,6 +42,7 @@ export const HeroBg = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+  filter: ${(props) => (props.cta ? 'hue-rotate(290deg)' : '')};
 `;
 
 export const VideoBg = styled.video`

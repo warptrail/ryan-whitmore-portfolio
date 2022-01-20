@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import CallToAction from '../CallToAction';
+
 import {
   HeroContainer,
   HeroBg,
@@ -20,14 +22,35 @@ import myLogo from '../../images/ryanwhitmore.png';
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
+  const [cta, setCta] = useState(false);
+
+  const myRef = useRef(null);
+
+  const executeScroll = () =>
+    myRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+      inline: 'nearest'
+    });
+  // run this function from an event handler or an effect to execute scroll
 
   const onHover = () => {
     setHover(!hover);
   };
 
+  const togglePopup = () => {
+    console.log('pop');
+    setCta(!cta);
+    executeScroll();
+  };
+
+  const closePopup = () => {
+    setCta(false);
+  };
+
   return (
-    <HeroContainer id="home">
-      <HeroBg>
+    <HeroContainer id="home" ref={myRef}>
+      <HeroBg cta={cta}>
         {/* <VideoBg autoPlay loop muted src={Video} type="video/mp4" /> */}
         <BackgroundOverlay />
         {/* <PhotoBg src={backgroundImage} /> */}
@@ -40,9 +63,10 @@ const HeroSection = () => {
         <HeroP>
           Here to help you make the most out of the World (Wide Web)
         </HeroP>
+
         <HeroBtnWrapper>
           <Button
-            to="about"
+            onClick={togglePopup}
             smooth={true}
             duration={500}
             onMouseEnter={onHover}
@@ -52,6 +76,7 @@ const HeroSection = () => {
           >
             Let&apos;s Connect{hover ? <ArrowUp /> : <ArrowRight />}
           </Button>
+          <CallToAction cta={cta} closePopup={closePopup} />
         </HeroBtnWrapper>
       </HeroContent>
     </HeroContainer>
