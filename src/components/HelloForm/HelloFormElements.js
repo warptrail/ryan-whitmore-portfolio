@@ -17,7 +17,9 @@ export const Form = styled.form`
 
 export const ContactH3 = styled.h3`
   text-align: center;
-  font-size: clamp(1.75rem, 1.75rem + 0vw, 1.75rem);
+  /* font-size: clamp(1.75rem, 1.75rem + 0vw, 1.75rem); */
+  font-size: 50px;
+  letter-spacing: 0.25rem;
   color: #fff;
   margin-bottom: 1vh;
 `;

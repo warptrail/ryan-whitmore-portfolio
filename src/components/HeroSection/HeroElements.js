@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FaArrowRight, FaArrowDown } from 'react-icons/fa';
+import { FaArrowRight, FaArrowDown, FaArrowUp } from 'react-icons/fa';
 import backgroundImage from '../../images/neon-background.png';
 
 export const HeroContainer = styled.div`
@@ -140,7 +140,7 @@ export const HeroBtnWrapper = styled.div`
   align-items: center;
 `;
 
-export const ArrowUp = styled(FaArrowDown)`
+export const ArrowUp = styled(FaArrowUp)`
   margin-left: 8px;
   font-size: 20px;
 `;

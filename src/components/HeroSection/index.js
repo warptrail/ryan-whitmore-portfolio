@@ -66,6 +66,8 @@ const HeroSection = () => {
 
         <HeroBtnWrapper>
           <Button
+            fontBig
+            big
             onClick={togglePopup}
             smooth={true}
             duration={500}

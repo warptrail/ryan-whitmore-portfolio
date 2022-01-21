@@ -17,7 +17,9 @@ import {
   AboutLink,
   ContactContainer,
   ContactWrap,
-  ContactBtn
+  ContactBtn,
+  ContactBtnScroll,
+  ContactBtnRoute
 } from './InfoElements';
 
 const InfoSection = ({
@@ -65,9 +67,16 @@ const InfoSection = ({
 
               <ContactWrap>
                 <ContactContainer>
-                  <ContactBtn onClick={onClickSayHello}>Say Hello</ContactBtn>
-                  <ContactBtn>Contact</ContactBtn>
-                  <ContactBtn>Bio</ContactBtn>
+                  <ContactBtnScroll
+                    to="contact"
+                    smooth={true}
+                    offset={-80}
+                    onClick={onClickSayHello}
+                  >
+                    Say Hello
+                  </ContactBtnScroll>
+                  <ContactBtnRoute to="/bio">More Info</ContactBtnRoute>
+                  <ContactBtn>Dinosaurs?</ContactBtn>
                 </ContactContainer>
               </ContactWrap>
             </Column1>

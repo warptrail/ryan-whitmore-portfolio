@@ -1,4 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouteLink } from 'react-router-dom';
 
 export const InfoContainer = styled.div`
   color: #fff;
@@ -147,9 +149,9 @@ export const ContactContainer = styled.div`
   }
 `;
 
-export const ContactBtn = styled.button`
+const contactLinkStyles = css`
   padding: 12px;
-  font-size: clamp(1.3125rem, 0.9792rem + 1.6667vw, 1.5rem);
+  font-size: clamp(1rem, -0.3333rem + 6.6667vw, 1.75rem);
   background: none;
   border: none;
   border-right: 1px solid black;
@@ -157,6 +159,8 @@ export const ContactBtn = styled.button`
   cursor: pointer;
   outline: inherit;
   width: 100%;
+  text-align: center;
+  text-decoration: none;
 
   @media screen and (min-width: 768px) {
     font-size: 18px;
@@ -169,4 +173,16 @@ export const ContactBtn = styled.button`
     border-right: none;
     border-radius: 10px;
   }
+`;
+
+export const ContactBtn = styled.button`
+  ${contactLinkStyles}
+`;
+
+export const ContactBtnScroll = styled(ScrollLink)`
+  ${contactLinkStyles}
+`;
+
+export const ContactBtnRoute = styled(RouteLink)`
+  ${contactLinkStyles}
 `;

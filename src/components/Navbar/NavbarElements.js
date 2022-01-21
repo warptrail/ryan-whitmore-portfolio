@@ -15,7 +15,8 @@ export const Nav = styled.nav`
     return colorChange(scrollNav, isHomePage);
   }};
   height: 80px;
-  margin-top: ${({ isHomePage }) => (isHomePage ? '-80px' : '0px')};
+  /* margin-top: ${({ isHomePage }) => (isHomePage ? '-80px' : '0px')}; */
+  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;

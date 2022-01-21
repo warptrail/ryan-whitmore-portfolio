@@ -13,13 +13,19 @@ import {
 
 import logo from '../../images/ryanwhitmore.png';
 
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggle, toggleScrollUp, handleToggleScrollUp }) => {
   const currentURL = useLocation();
   const [scrollNav, setScrollNav] = useState(false);
 
   // when past a particular point, trigger the transparent nav background
   const changeNav = () => {
-    if (window.scrollY > 150) {
+    if (currentURL.pathname === '/contact') {
+      if (window.scrollY > 30) {
+        setScrollNav(true);
+      } else {
+        setScrollNav(false);
+      }
+    } else if (window.scrollY > 150) {
       setScrollNav(true);
     } else {
       setScrollNav(false);
@@ -33,9 +39,11 @@ const Navbar = ({ toggle }) => {
   useEffect(() => {
     window.addEventListener('scroll', changeNav);
   }, []);
+  const location = useLocation();
+  console.log(location);
 
-  return (
-    <>
+  const homePageNavBar = () => {
+    return (
       <Nav scrollNav={scrollNav} isHomePage={currentURL.pathname === '/'}>
         <NavbarContainer>
           <NavLogo to="/">{scrollNav ? <NavLogoImg src={logo} /> : ''}</NavLogo>
@@ -45,7 +53,21 @@ const Navbar = ({ toggle }) => {
           </MobileIcon>
         </NavbarContainer>
       </Nav>
-    </>
+    );
+  };
+
+  const contactPageNavBar = () => {
+    return (
+      <Nav scrollNav={scrollNav} isHomePage={currentURL.pathname === '/'}>
+        <NavLogo onClick={() => handleToggleScrollUp()} to="/">
+          <NavLogoImg src={logo} />
+        </NavLogo>
+      </Nav>
+    );
+  };
+
+  return (
+    <>{currentURL.pathname === '/' ? homePageNavBar() : contactPageNavBar()}</>
   );
 };
 

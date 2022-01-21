@@ -1,60 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSection';
 import ProjectSection from '../components/ProjectSection';
 import { aboutObject } from '../Data';
 import HelloForm from '../components/HelloForm';
 
-const Home = ({ isNavOpen }) => {
-  // https://stackoverflow.com/questions/53158796/get-scroll-position-with-reactjs
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const { pathname, hash } = useLocation();
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll, { passive: true });
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
-
-  /*
-  // Code to scroll to specific id when changing route
-  // https://stackoverflow.com/questions/40280369/use-anchors-with-react-router
+const Home = ({ toggleScrollUp, setToggleScrollUp }) => {
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    // if not a hash link, scroll to top
-    if (hash === '') {
-      window.scrollTo(0, 0);
+    if (toggleScrollUp) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+      setToggleScrollUp(false);
     }
-    // else scroll to id
-    else {
-      setTimeout(() => {
-        const id = hash.replace('#', '');
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView();
-        }
-      }, 0);
-    }
-  }, [pathname, hash]); // do this on route change
-  */
-
-  /*
-  const hideOverflow = (bool) => {
-    if (bool) {
-      return 'hide';
-    }
-    return '';
-  };
-*/
-
+  }, [pathname]);
   const renderHomePage = (
     <div id="top" className="home-container" style={{ overflow: 'hidden' }}>
       <HeroSection />

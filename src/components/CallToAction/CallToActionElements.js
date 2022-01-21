@@ -42,16 +42,17 @@ export const RetractButton = styled.button`
   background: #00bceb;
   height: 100%;
   padding: 10px 20px;
+  font-size: clamp(1.125rem, 0.2361rem + 4.4444vw, 1.625rem);
 `;
 
 export const PopupP = styled.p`
   text-align: center;
   font-size: ${(props) =>
-    props.small
-      ? 'clamp(1.25rem, 0.6944rem + 2.7778vw, 1.5625rem);'
+    props.extraBig
+      ? 'clamp(1.75rem, 0.6389rem + 5.5556vw, 2.375rem);'
       : 'clamp(1.5rem, 1.0556rem + 2.2222vw, 1.75rem)'};
   margin-top: 20px;
-  margin-bottom: ${(props) => (props.extraMargin ? '10px' : '0px')};
+  margin-bottom: ${(props) => (props.extraMargin ? '14px' : '0px')};
   color: #fff;
 `;
 

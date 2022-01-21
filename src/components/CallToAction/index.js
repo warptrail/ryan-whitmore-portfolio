@@ -60,7 +60,9 @@ const CallToAction = ({ cta, closePopup }) => {
 
   return (
     <PopupBox cta={cta} qr={qrActive}>
-      <PopupP extraMargin>Find me on the Web</PopupP>
+      <PopupP extraMargin extraBig>
+        Find me on the Web
+      </PopupP>
       <Socials minimal />
       {renderCtaPanel()}
       <PopupFooter>
