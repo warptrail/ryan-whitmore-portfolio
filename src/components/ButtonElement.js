@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-scroll';
 
-export const Button = styled.button`
+const buttonStyles = css`
   border-radius: 50px;
   background: ${({ primary }) => (primary ? '#06D932' : '#010606')};
   white-space: nowrap;
@@ -22,4 +22,12 @@ export const Button = styled.button`
     transition: all 0.2s ease-in-out;
     background: ${({ primary }) => (primary ? '#fff' : '##01BF71')};
   }
+`;
+
+export const Button = styled.button`
+  ${buttonStyles}
+`;
+
+export const ScrollButton = styled(Link)`
+  ${buttonStyles}
 `;

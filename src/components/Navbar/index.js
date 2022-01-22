@@ -18,27 +18,31 @@ const Navbar = ({ toggle, toggleScrollUp, handleToggleScrollUp }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
   // when past a particular point, trigger the transparent nav background
-  const changeNav = () => {
-    if (currentURL.pathname === '/contact') {
-      if (window.scrollY > 30) {
-        setScrollNav(true);
-      } else {
-        setScrollNav(false);
-      }
-    } else if (window.scrollY > 150) {
-      setScrollNav(true);
-    } else {
-      setScrollNav(false);
-    }
-  };
 
   // const toggleHome = () => {
   //   scroll.scrollToTop();
   // };
 
   useEffect(() => {
+    const changeNav = () => {
+      if (currentURL.pathname === '/contact') {
+        if (window.scrollY > 30) {
+          setScrollNav(true);
+        } else {
+          setScrollNav(false);
+        }
+      } else if (window.scrollY > 150) {
+        setScrollNav(true);
+      } else {
+        setScrollNav(false);
+      }
+    };
+
     window.addEventListener('scroll', changeNav);
-  }, []);
+    return () => {
+      document.removeEventListener('scroll', changeNav);
+    };
+  }, [currentURL.pathname]);
   const location = useLocation();
   console.log(location);
 
@@ -67,7 +71,11 @@ const Navbar = ({ toggle, toggleScrollUp, handleToggleScrollUp }) => {
   };
 
   return (
-    <>{currentURL.pathname === '/' ? homePageNavBar() : contactPageNavBar()}</>
+    <>
+      {currentURL.pathname === '/' || currentURL.pathname === '/bio'
+        ? homePageNavBar()
+        : contactPageNavBar()}
+    </>
   );
 };
 

@@ -115,6 +115,30 @@ export const HeroH1 = styled.h1`
   }
 `;
 
+// https://css-tricks.com/full-width-containers-limited-width-parents/
+export const HeroH2 = styled.h2`
+  color: #06d932;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 28px;
+  background-color: black;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 10px 0;
+
+  @media screen and(min-width: 500px) {
+    /* font-size: 38px; */
+  }
+
+  @media screen and (min-width: 768px) {
+    /* font-size: 40px; */
+  }
+`;
+
 export const HeroP = styled.p`
   margin-top: 2rem;
   color: #fff;

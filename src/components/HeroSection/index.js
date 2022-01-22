@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import CallToAction from '../CallToAction';
 
+import CallToAction from '../CallToAction';
 import {
   HeroContainer,
   HeroBg,
