@@ -3,33 +3,39 @@ import { Link } from 'react-router-dom';
 import { FaGithub, FaPlay } from 'react-icons/fa';
 
 export const ProjectContainer = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   /* background: #010606; */
   background: #37022c;
+  padding-top: ${(props) => (props.marginTop ? '20px' : '0')};
 `;
 
 export const ProjectWrapper = styled.div`
   max-width: 1000px;
-  margin: auto;
-  padding: 40px 5px;
+  margin: 0 auto;
+  padding: 10px 5px;
   display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  grid-gap: 16px;
+  /* grid-template-columns: 1fr; */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* align-items: center; */
+  gap: 16px;
+  /* grid-auto-rows: 1fr; */
 
-  /* background: #8fe480; */
+  @media screen and (min-width: 626px) {
+    gap: 12px;
+  }
 
-  @media screen and (min-width: 700px) {
+  /* @media screen and (min-width: 700px) {
     grid-template-columns: 1fr 1fr;
     padding: 40px 20px;
   }
 
   @media screen and (min-width: 968px) {
     grid-template-columns: 1fr 1fr 1fr;
-  }
+    grid-auto-rows: 1fr;
+  } */
 `;
 
 export const ProjectCard = styled.div`
@@ -39,10 +45,14 @@ export const ProjectCard = styled.div`
   justify-content: flex-start;
   align-items: center;
   border-radius: 10px;
-  height: auto;
-  /* max-height: 380px; */
-  padding: 30px;
-  width: 95%;
+  /* min-height: 380px; */
+
+  /* display: grid;
+  /* grid-template-rows: repeat(3, 1fr); */
+
+  /* height: auto; */
+  padding: 20px;
+  width: 98%;
   margin: 0 auto;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
@@ -69,16 +79,23 @@ export const ProjectH3 = styled.h3`
   margin-bottom: 10px;
   text-align: center;
   pointer-events: none;
-  @media screen and (max-width: 480px) {
+
+  @media screen and (min-width: 480px) {
     font-size: 2rem;
+  }
+
+  @media screen and (min-width: 940px) {
+    font-size: 2.1rem;
   }
 `;
 
 export const ProjectP = styled.p`
   font-size: clamp(1rem, 0.3333rem + 3.3333vw, 1.375rem);
+  line-height: 1.4;
   text-align: left;
   color: black;
   pointer-events: none;
+  margin-bottom: 15px;
 `;
 
 export const ProjectBtn = styled.a`
@@ -86,31 +103,42 @@ export const ProjectBtn = styled.a`
 `;
 
 export const LinkBox = styled.div`
-  display: flex;
-  justify-content: space-around;
-  margin-top: 30px;
-
-  & > * {
-    margin: 10px;
-    padding: 10px;
-  }
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 4px 8px;
+  grid-template-areas:
+    '. .'
+    '. .';
+  margin-top: auto;
+  max-width: 400px;
 `;
 
 export const ProjectLink = styled.a`
   background: #37022c;
   color: #fff;
   display: flex;
+  justify-content: center;
   text-decoration: none;
   text-align: center;
+  align-items: center;
   border-radius: 5px;
   font-size: 1.1rem;
 `;
 
 export const MoreInfoLink = styled(Link)`
   text-decoration: none;
-  margin-top: 15px;
+  text-align: center;
+  display: block;
   font-size: clamp(1.3rem, 0.3333rem + 3.3333vw, 1.375rem);
-  color: #37052c;
+  background: #37052c;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+
+  /* margin: 0 auto; */
+  grid-column: 1 / span 2;
 `;
 
 export const IconGithub = styled(FaGithub)`
@@ -120,36 +148,4 @@ export const IconGithub = styled(FaGithub)`
 
 export const IconPlay = styled(FaPlay)`
   margin-left: 10px;
-`;
-
-// ! Project Spotlight Section
-
-export const SpotlightContainer = styled.div`
-  min-height: 84vh;
-  background: #dadada;
-  width: 100%;
-`;
-
-export const ReturnBtn = styled.button`
-  background: none;
-  color: yellowgreen;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-`;
-
-export const ScreenshotGallery = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const ScreenshotFrame = styled.div`
-  padding: 12px 18px;
-`;
-
-export const Screenshot = styled.img`
-  width: 100%;
-  border-radius: 12px;
 `;

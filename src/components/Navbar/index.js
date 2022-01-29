@@ -8,7 +8,10 @@ import {
   NavbarContainer,
   NavLogo,
   MobileIcon,
-  NavLogoImg
+  NavLogoImg,
+  NavMenu,
+  NavItem,
+  NavLinks
 } from './NavbarElements';
 
 import logo from '../../images/ryanwhitmore.png';
@@ -25,7 +28,7 @@ const Navbar = ({ toggle, toggleScrollUp, handleToggleScrollUp }) => {
 
   useEffect(() => {
     const changeNav = () => {
-      if (currentURL.pathname === '/contact') {
+      if (currentURL.pathname !== '/') {
         if (window.scrollY > 30) {
           setScrollNav(true);
         } else {
@@ -51,7 +54,27 @@ const Navbar = ({ toggle, toggleScrollUp, handleToggleScrollUp }) => {
       <Nav scrollNav={scrollNav} isHomePage={currentURL.pathname === '/'}>
         <NavbarContainer>
           <NavLogo to="/">{scrollNav ? <NavLogoImg src={logo} /> : ''}</NavLogo>
-
+          <NavMenu>
+            <NavItem>
+              <NavLinks
+                to="about"
+                smooth={true}
+                duration={500}
+                activeClass="active"
+                spy={true}
+                exact="true"
+                offset={-80}
+              >
+                About
+              </NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="projects">Projects</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="contact">Contact</NavLinks>
+            </NavItem>
+          </NavMenu>
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>

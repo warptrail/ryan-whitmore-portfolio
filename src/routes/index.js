@@ -18,9 +18,13 @@ const Home = ({ toggleScrollUp, setToggleScrollUp }) => {
       });
       setToggleScrollUp(false);
     }
-  }, [pathname]);
+  }, [pathname, setToggleScrollUp, toggleScrollUp]);
   const renderHomePage = (
-    <div id="top" className="home-container" style={{ overflow: 'hidden' }}>
+    <div
+      id="top"
+      className="home-container"
+      style={{ overflow: 'hidden', width: '100vw' }}
+    >
       <HeroSection />
       <InfoSection {...aboutObject} />
 

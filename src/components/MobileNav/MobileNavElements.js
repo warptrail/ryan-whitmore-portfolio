@@ -76,7 +76,10 @@ export const MenuLi = styled.li`
   margin: 4.8vh 0;
 `;
 
-export const MenuLink = styled(LinkScroll)`
-  /* color: red; */
+export const MenuScrollLink = styled(LinkScroll)`
+  cursor: pointer;
+`;
+
+export const MenuRouteLink = styled(LinkRouter)`
   cursor: pointer;
 `;

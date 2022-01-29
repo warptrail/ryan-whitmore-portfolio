@@ -14,6 +14,8 @@ import Home from './routes';
 import ProjectPage from './routes/ProjectPage';
 import ContactPage from './routes/ContactPage';
 import BioPage from './routes/BioPage';
+import BlogPage from './routes/BlogPage';
+import ProjectGalleryPage from './routes/ProjectGalleryPage';
 import Footer from './components/Footer';
 
 function App() {
@@ -47,7 +49,11 @@ function App() {
         id="top"
         handleToggleScrollUp={handleToggleScrollUp}
       />
-      <MobileNav isNavOpen={isNavOpen} toggle={toggle} />
+      <MobileNav
+        isNavOpen={isNavOpen}
+        toggle={toggle}
+        handleToggleScrollUp={handleToggleScrollUp}
+      />
 
       <Switch>
         <Route
@@ -55,7 +61,6 @@ function App() {
           render={(props) => (
             <Home
               {...props}
-              isNavOpen={isNavOpen}
               toggleScrollUp={toggleScrollUp}
               setToggleScrollUp={setToggleScrollUp}
             />
@@ -65,7 +70,8 @@ function App() {
 
         <Route path="/contact" component={ContactPage} />
         <Route path="/bio" component={BioPage} />
-
+        <Route path="/blog" component={BlogPage} />
+        <Route path="/projects" exact component={ProjectGalleryPage} />
         <Route path="/projects/:projectId" component={ProjectPage} />
       </Switch>
       <Footer />

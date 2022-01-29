@@ -106,12 +106,12 @@ export const HeroH1 = styled.h1`
   text-align: center;
   margin-top: 24px;
 
-  @media screen and (min-width: 768px) {
-    font-size: 40px;
-  }
-
   @media screen and(min-width: 480px) {
     font-size: 38px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 68px;
   }
 `;
 
@@ -130,7 +130,7 @@ export const HeroH2 = styled.h2`
   margin-right: -50vw;
   padding: 10px 0;
 
-  @media screen and(min-width: 500px) {
+  @media screen and(min-width: 480px) {
     /* font-size: 38px; */
   }
 
@@ -149,7 +149,8 @@ export const HeroP = styled.p`
   line-height: 1.2;
 
   @media screen and (min-width: 768px) {
-    font-size: 24px;
+    font-size: 44px;
+    padding: 30px;
   }
 
   @media screen and(min-width: 480px) {

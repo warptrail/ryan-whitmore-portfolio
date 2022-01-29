@@ -1,12 +1,13 @@
 import React from 'react';
+import BlogSection from '../components/BlogSection';
+import BlogHero from '../components/HeroSection/BlogHero';
 
 const BlogPage = () => {
   return (
-    <div>
-      This is the blog. Here we will discuss the merits of being a cowabunga
-      warrior. There is no time to prep the ponies, the castle has already been
-      sieged.
-    </div>
+    <>
+      <BlogHero />
+      <BlogSection />
+    </>
   );
 };
 

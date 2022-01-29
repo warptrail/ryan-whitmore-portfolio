@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Link as LinkRouter } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 
 const colorChange = (scrollNav) => {
   if (scrollNav) {
@@ -11,8 +12,8 @@ const colorChange = (scrollNav) => {
 
 export const Nav = styled.nav`
   color: #fff;
-  background: ${({ scrollNav, isHomePage }) => {
-    return colorChange(scrollNav, isHomePage);
+  background: ${({ scrollNav }) => {
+    return colorChange(scrollNav);
   }};
   height: 80px;
   /* margin-top: ${({ isHomePage }) => (isHomePage ? '-80px' : '0px')}; */
@@ -25,10 +26,7 @@ export const Nav = styled.nav`
   /* top: ${({ scrollNav }) => (scrollNav ? '60px' : '0')}; */
   top: 0rem;
   z-index: 10;
-
-  @media screen and (max-width: 960px) {
-    transition: ${({ isHomePage }) => (isHomePage ? '0.8s all ease;' : 'none')};
-  }
+  transition: 0.8s all ease;
 `;
 
 export const NavbarContainer = styled.div`
@@ -41,7 +39,7 @@ export const NavbarContainer = styled.div`
   max-width: 1100px;
 `;
 
-export const NavLogo = styled(LinkRouter)`
+export const NavLogo = styled(RouterLink)`
   color: #fff;
   justify-self: flex-start;
   cursor: pointer;
@@ -62,6 +60,65 @@ export const NavLogoImg = styled.img`
 export const NavLogoText = styled.span`
   color: #fff;
   margin-right: 12px;
+`;
+
+export const NavMenu = styled.ul`
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+
+  @media screen and (max-width: 960px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 80px;
+    left: ${({ click }) => (click ? 0 : '-100%')};
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: #101522;
+  }
+`;
+
+export const NavItem = styled.li`
+  height: 80px;
+  border-bottom: 2px solid transparent;
+  &:hover {
+    border-bottom: 2px solid #4b59f7;
+  }
+  @media screen and (max-width: 960px) {
+    width: 100%;
+    &:hover {
+      border: none;
+    }
+  }
+`;
+
+export const NavLinks = styled(ScrollLink)`
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  cursor: pointer;
+
+  &.active {
+    border-bottom: 3px solid #01bf71;
+  }
+
+  @media screen and (max-width: 960px) {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+    &:hover {
+      color: #4b59f7;
+      transition: all 0.3s ease;
+    }
+  }
 `;
 
 export const MobileIcon = styled.div`

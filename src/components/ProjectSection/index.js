@@ -21,7 +21,7 @@ import { projectData } from '../../Data';
 
 const headerText = 'Project Gallery';
 
-const ProjectSection = () => {
+const ProjectSection = ({ marginTop }) => {
   // const scrollToSection = () => {
   //   scroller.scrollTo('projects', {
   //     duration: 50,
@@ -37,15 +37,26 @@ const ProjectSection = () => {
       return (
         <ProjectCard id={key} key={key}>
           <ProjectIcon src={project.icon} />
+
           <ProjectH3>{project.name}</ProjectH3>
+
           <ProjectP>{project.description}</ProjectP>
-          <MoreInfoLink to={project.link}>More Info</MoreInfoLink>
+
           <LinkBox>
-            <ProjectLink href="/">
+            <MoreInfoLink to={project.link}>More Info</MoreInfoLink>
+            <ProjectLink
+              target="_blank"
+              rel="noopener noreferrer"
+              href={project.repoLink}
+            >
               Repo
               <IconGithub />
             </ProjectLink>
-            <ProjectLink href="/">
+            <ProjectLink
+              target="_blank"
+              rel="noopener noreferrer"
+              href={project.demoLink}
+            >
               Demo <IconPlay />
             </ProjectLink>
           </LinkBox>
@@ -56,8 +67,8 @@ const ProjectSection = () => {
   };
 
   return (
-    <ProjectContainer id="projects" className="projects">
-      <H2>{headerText}</H2>
+    <ProjectContainer id="projects" className="projects" marginTop>
+      <H2 center>{headerText}</H2>
       {renderProjectSection()}
     </ProjectContainer>
   );

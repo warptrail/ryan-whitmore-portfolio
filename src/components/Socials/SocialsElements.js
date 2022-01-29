@@ -13,7 +13,6 @@ import { FaGithub, FaEnvelope, FaTwitter, FaLinkedin } from 'react-icons/fa';
 export const SocialMediaWrap = styled.div`
   display: flex;
   align-items: center;
-  background: #061143;
   justify-content: center;
   justify-content: space-evenly;
   /* align-content: center; */

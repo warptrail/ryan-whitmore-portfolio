@@ -150,8 +150,10 @@ export const ContactContainer = styled.div`
 `;
 
 const contactLinkStyles = css`
-  padding: 12px;
-  font-size: clamp(1rem, -0.3333rem + 6.6667vw, 1.75rem);
+  padding: 5px 5px;
+  font-size: clamp(1.2rem, -0.3333rem + 6.6667vw, 1.75rem);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 900;
   background: none;
   border: none;
   border-right: 1px solid black;

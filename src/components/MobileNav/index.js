@@ -8,41 +8,71 @@ import {
   MobNaveWrapper,
   MenuUl,
   MenuLi,
-  MenuLink
+  MenuScrollLink,
+  MenuRouteLink
 } from './MobileNavElements';
 
-const MobileNav = ({ isNavOpen, toggle }) => {
-  console.log('hello');
+const MobileNav = ({ isNavOpen, toggle, handleToggleScrollUp }) => {
+  const currentUrl = useLocation();
+
+  const homePageMobNav = () => {
+    return (
+      <MenuUl>
+        <MenuLi>
+          <MenuScrollLink to="top" onClick={toggle} smooth={true}>
+            Home
+          </MenuScrollLink>
+        </MenuLi>
+        <MenuLi>
+          <MenuScrollLink to="about" onClick={toggle} smooth={true}>
+            About
+          </MenuScrollLink>
+        </MenuLi>
+        <MenuLi>
+          <MenuScrollLink
+            to="projects"
+            onClick={toggle}
+            offset={-50}
+            smooth={true}
+          >
+            Projects
+          </MenuScrollLink>
+        </MenuLi>
+        <MenuLi>
+          <MenuScrollLink to="contact" onClick={toggle} smooth={true}>
+            Contact
+          </MenuScrollLink>
+        </MenuLi>
+        <MenuLi>Blog</MenuLi>
+      </MenuUl>
+    );
+  };
+
+  const bioPageMobNav = () => {
+    return (
+      <MenuUl>
+        <MenuLi>
+          <MenuRouteLink to="/" onClick={() => handleToggleScrollUp()}>
+            Home
+          </MenuRouteLink>
+        </MenuLi>
+      </MenuUl>
+    );
+  };
+
+  const menuSelector = () => {
+    if (currentUrl.pathname === '/') {
+      return homePageMobNav();
+    }
+    return bioPageMobNav();
+  };
+
   return (
     <MobNavContainer isNavOpen={isNavOpen} onClick={toggle}>
       <Icon onClick={toggle}>
         <CloseIcon />
       </Icon>
-      <MobNaveWrapper>
-        <MenuUl>
-          <MenuLi>
-            <MenuLink to="top" onClick={toggle} smooth={true}>
-              Home
-            </MenuLink>
-          </MenuLi>
-          <MenuLi>
-            <MenuLink to="about" onClick={toggle} smooth={true}>
-              About
-            </MenuLink>
-          </MenuLi>
-          <MenuLi>
-            <MenuLink to="projects" onClick={toggle} offset={-50} smooth={true}>
-              Projects
-            </MenuLink>
-          </MenuLi>
-          <MenuLi>
-            <MenuLink to="contact" onClick={toggle} smooth={true}>
-              Contact
-            </MenuLink>
-          </MenuLi>
-          <MenuLi>Blog</MenuLi>
-        </MenuUl>
-      </MobNaveWrapper>
+      <MobNaveWrapper>{menuSelector()}</MobNaveWrapper>
     </MobNavContainer>
   );
 };

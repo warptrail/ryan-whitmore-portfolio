@@ -76,7 +76,7 @@ const InfoSection = ({
                     Say Hello
                   </ContactBtnScroll>
                   <ContactBtnRoute to="/bio">More Info</ContactBtnRoute>
-                  <ContactBtn>Dinosaurs?</ContactBtn>
+                  <ContactBtnRoute to="/blog">Blog</ContactBtnRoute>
                 </ContactContainer>
               </ContactWrap>
             </Column1>

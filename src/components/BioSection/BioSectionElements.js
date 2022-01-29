@@ -25,18 +25,20 @@ const colorChooser = (i) => {
   return color;
 };
 
-export const BioContainer = styled.div`
-  /* height: 800px; */
-  background-color: #071200;
-  color: #fff;
-`;
-
 const bioPadding = css`
   padding: 0 calc(4vw + 12px);
 `;
 
-export const BioTitle = styled.h3`
+export const BioContainer = styled.div`
+  /* height: 800px; */
   ${bioPadding}
+  background-color: #071200;
+  color: #fff;
+  padding-bottom: 20px;
+`;
+
+export const BioTitle = styled.h3`
+  /* ${bioPadding} */
   font-size: 22px;
   padding-top: 30px;
   margin-bottom: 50px;
@@ -50,9 +52,17 @@ export const BioTitle = styled.h3`
 `;
 
 export const BioContent = styled.p`
-  ${bioPadding}
+  /* ${bioPadding} */
   font-size: 20px;
   margin: 20px 0;
+`;
+
+export const BioList = styled.ol`
+  padding-left: 2em;
+`;
+export const BioListContent = styled.li`
+  padding-left: 0.5em;
+  font-size: 18px;
 `;
 
 export const StackBox = styled.div`

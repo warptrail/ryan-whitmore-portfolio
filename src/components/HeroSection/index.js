@@ -13,8 +13,7 @@ import {
   ArrowUp,
   ArrowRight,
   NameBox,
-  MyLogo,
-  Name
+  MyLogo
 } from './HeroElements';
 import { Button } from '../ButtonElement';
 import backgroundImage from '../../images/neon-background.png';
@@ -39,7 +38,6 @@ const HeroSection = () => {
   };
 
   const togglePopup = () => {
-    console.log('pop');
     setCta(!cta);
     executeScroll();
   };
