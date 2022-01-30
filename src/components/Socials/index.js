@@ -12,12 +12,13 @@ import {
   IconEmail
 } from './SocialsElements';
 
-const Socials = ({ minimal }) => {
+const Socials = ({ minimal, tiny }) => {
   console.log(minimal);
   return (
     <SocialMediaWrap>
       <SocialIcons minimal={minimal}>
         <SocialIconLink
+          tiny={tiny}
           href="https://www.linkedin.com/in/ryanwhitmoredev/"
           target="_blank"
           aria-label="LinkedIn"
@@ -25,6 +26,7 @@ const Socials = ({ minimal }) => {
           <IconLinkedin />
         </SocialIconLink>
         <SocialIconLink
+          tiny={tiny}
           href="https://github.com/warptrail"
           target="_blank"
           aria-label="Github"
@@ -32,6 +34,7 @@ const Socials = ({ minimal }) => {
           <IconGithub />
         </SocialIconLink>
         <SocialIconLink
+          tiny={tiny}
           href="https://twitter.com/whitmorespace"
           target="_blank"
           aria-label="Twitter"
@@ -43,6 +46,7 @@ const Socials = ({ minimal }) => {
           ''
         ) : (
           <SocialIconLink
+            tiny={tiny}
             href="https://gist.githubusercontent.com/warptrail/e8719df085ccb891310ccb5c80618b54/raw/6410274344a22517d39738847522bbb9bec0be85/gistfile1.txt"
             target="_blank"
             aria-label="Email"

@@ -6,7 +6,9 @@ import {
   HeroBg,
   PhotoBg,
   BackgroundOverlay,
+  HeroWrapper,
   HeroContent,
+  HeroWords,
   HeroH1,
   HeroP,
   HeroBtnWrapper,
@@ -53,32 +55,38 @@ const HeroSection = () => {
         <BackgroundOverlay />
         {/* <PhotoBg src={backgroundImage} /> */}
       </HeroBg>
-      <HeroContent>
-        <NameBox>
-          <MyLogo src={myLogo} />
-        </NameBox>
-        <HeroH1>Frontend Web Developer</HeroH1>
-        <HeroP>
-          Here to help you make the most out of the World (Wide Web)
-        </HeroP>
 
-        <HeroBtnWrapper>
-          <Button
-            fontBig
-            big
-            onClick={togglePopup}
-            smooth={true}
-            duration={500}
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
-            primary="true"
-            dark="true"
-          >
-            Let&apos;s Connect{hover ? <ArrowUp /> : <ArrowRight />}
-          </Button>
+      <HeroWrapper>
+        <HeroContent>
+          <NameBox>
+            <MyLogo src={myLogo} />
+          </NameBox>
+          <HeroWords cta={cta}>
+            <HeroH1>Frontend Web Developer</HeroH1>
+            <HeroP>
+              Here to help you make the most out of the World (Wide Web)
+            </HeroP>
+
+            <HeroBtnWrapper>
+              <Button
+                fontBig
+                big
+                onClick={togglePopup}
+                smooth={true}
+                duration={500}
+                onMouseEnter={onHover}
+                onMouseLeave={onHover}
+                primary="true"
+                dark="true"
+              >
+                Let&apos;s Connect{hover ? <ArrowUp /> : <ArrowRight />}
+              </Button>
+            </HeroBtnWrapper>
+          </HeroWords>
+
           <CallToAction cta={cta} closePopup={closePopup} />
-        </HeroBtnWrapper>
-      </HeroContent>
+        </HeroContent>
+      </HeroWrapper>
     </HeroContainer>
   );
 };

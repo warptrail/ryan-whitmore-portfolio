@@ -23,19 +23,19 @@ export const SocialIcons = styled.div`
   align-items: center;
   width: auto;
 
-  & > * {
+  > * {
     margin: 4px ${(props) => (props.minimal ? '18px' : '10px')};
   }
 `;
 
 export const SocialIconLink = styled.a`
   color: #fff;
-  font-size: 38px;
-  color: #fff;
   cursor: pointer;
   text-decoration: none;
-  font-size: clamp(2.925rem, 0.1906rem + 13.2222vw, 4rem);
+
   display: flex;
+  font-size: ${(props) =>
+    props.tiny ? '34px' : 'clamp(2.925rem, 0.1906rem + 13.2222vw, 4rem)'};
 
   /* align-items: center; */
 

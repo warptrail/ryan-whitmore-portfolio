@@ -4,7 +4,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 const colorChange = (scrollNav) => {
   if (scrollNav) {
-    return '#000';
+    return '#030808';
   }
 
   return 'transparent';
@@ -39,22 +39,17 @@ export const NavbarContainer = styled.div`
   max-width: 1100px;
 `;
 
-export const NavLogo = styled(RouterLink)`
-  color: #fff;
+export const NavLogo = styled(ScrollLink)`
   justify-self: flex-start;
   cursor: pointer;
-  font-size: 1.5rem;
+  align-self: center;
   display: flex;
-  /* align-items: center; */
-  /* margin-left: 24px;
-  margin-right: 12px; */
-  font-weight: bold;
-  text-decoration: none;
 `;
 
 export const NavLogoImg = styled.img`
   width: 100%;
   padding: 0 5px;
+  max-width: 400px;
 `;
 
 export const NavLogoText = styled.span`
@@ -68,7 +63,7 @@ export const NavMenu = styled.ul`
   list-style: none;
   text-align: center;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -85,14 +80,14 @@ export const NavMenu = styled.ul`
 export const NavItem = styled.li`
   height: 80px;
   border-bottom: 2px solid transparent;
-  &:hover {
+  /* &:hover {
     border-bottom: 2px solid #4b59f7;
-  }
-  @media screen and (max-width: 960px) {
+  } */
+  @media screen and (max-width: 768px) {
     width: 100%;
-    &:hover {
+    /* &:hover {
       border: none;
-    }
+    } */
   }
 `;
 
@@ -109,7 +104,7 @@ export const NavLinks = styled(ScrollLink)`
     border-bottom: 3px solid #01bf71;
   }
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 768px) {
     text-align: center;
     padding: 2rem;
     width: 100%;

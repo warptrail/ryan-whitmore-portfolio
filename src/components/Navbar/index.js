@@ -53,7 +53,16 @@ const Navbar = ({ toggle, toggleScrollUp, handleToggleScrollUp }) => {
     return (
       <Nav scrollNav={scrollNav} isHomePage={currentURL.pathname === '/'}>
         <NavbarContainer>
-          <NavLogo to="/">{scrollNav ? <NavLogoImg src={logo} /> : ''}</NavLogo>
+          <NavLogo
+            to="top"
+            smooth={true}
+            duration={500}
+            activeClass="active"
+            spy={true}
+            exact="true"
+          >
+            {scrollNav ? <NavLogoImg src={logo} /> : ''}
+          </NavLogo>
           <NavMenu>
             <NavItem>
               <NavLinks
@@ -69,10 +78,30 @@ const Navbar = ({ toggle, toggleScrollUp, handleToggleScrollUp }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="projects">Projects</NavLinks>
+              <NavLinks
+                to="projects"
+                smooth={true}
+                duration={500}
+                activeClass="active"
+                spy={true}
+                exact="true"
+                offset={-80}
+              >
+                Projects
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="contact">Contact</NavLinks>
+              <NavLinks
+                to="contact"
+                smooth={true}
+                duration={500}
+                activeClass="active"
+                spy={true}
+                exact="true"
+                offset={-80}
+              >
+                Contact
+              </NavLinks>
             </NavItem>
           </NavMenu>
           <MobileIcon onClick={toggle}>

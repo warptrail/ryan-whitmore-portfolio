@@ -12,23 +12,37 @@ export const PopupBox = styled.div`
   left: ${(props) => (props.cta ? '0' : 'calc(100vw + 100%)')};
   /* left: 0; */
   /* bottom: 50px; */
-  top: ${(props) => (props.qr ? '12vh' : '17vh')};
-  min-height: 50vh;
+  top: ${(props) => (props.qr ? '10vh' : '16vh')};
+  /* min-height: 50vh; */
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  background: black;
-  transition: 0.5s ease-in-out;
+  max-width: 768px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  background: #030808;
+  transition: 0.5s all ease-in-out;
   opacity: 99%;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: bottom;
+
+  @media screen and (min-width: 768px) {
+    left: inherit;
+    right: ${(props) =>
+      props.cta ? 'calc(20vw - 150px)' : 'calc(100vw + 100%)'};
+    top: 30vh;
+    border-radius: 10px;
+  }
+
+  @media screen and (min-width: 900px) {
+    left: ${(props) => (props.cta ? 'calc(30vw - 20%)' : 'calc(100vw + 100%)')};
+    top: 33vh;
+  }
 `;
 
 export const PopupFooter = styled.div`
-  margin-top: auto;
+  /* margin-top: auto; */
   /* height: 30px; */
   width: 100%;
   background: #041144;
@@ -51,7 +65,7 @@ export const PopupP = styled.p`
     props.extraBig
       ? 'clamp(1.75rem, 0.6389rem + 5.5556vw, 2.375rem);'
       : 'clamp(1.5rem, 1.0556rem + 2.2222vw, 1.75rem)'};
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: ${(props) => (props.extraMargin ? '14px' : '0px')};
   color: #fff;
 `;
@@ -62,6 +76,7 @@ export const CtaButtonBox = styled.div`
 
 const CtaButtonStyles = css`
   display: flex;
+  align-self: center;
   justify-content: center;
   width: 80%;
   background: white;
@@ -112,26 +127,41 @@ export const AddressIcon = styled(FaAddressCard)`
 `;
 
 export const QRBox = styled.div`
-  height: 100%auto;
   display: flex;
   flex-direction: column;
+  align-self: center;
   position: relative;
-  /* display: none; */
+  border: 1px solid #4d2800;
+  border-radius: 10px;
+  padding: 4px;
+
+  @media screen and (min-width: 768px) {
+    /* height: 400px; */
+  }
 `;
 
 export const QRCloseBtn = styled.button`
   position: absolute;
   top: 0;
   left: 0;
-  height: 8%;
-  width: 8%;
+  height: calc(7vw + 3px);
+  width: calc(7vw + 3px);
   background: red;
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   font-style: bold;
   color: #fff;
+
+  @media screen and (min-width: 768px) {
+    /* height: 400px; */
+    height: 30px;
+    width: 30px;
+  }
 `;
 
 export const QRImage = styled.img`
   width: 70%;
   margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+  }
 `;

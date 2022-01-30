@@ -27,6 +27,11 @@ const buttonStyles = css`
     transition: all 0.2s ease-in-out;
     background: ${({ primary }) => (primary ? '#fff' : '##01BF71')};
   }
+
+  @media screen and (min-width: 375px) {
+    font-size: ${({ fontBig }) =>
+      fontBig ? 'clamp(1.4375rem, 0.0982rem + 5.7143vw, 1.8125rem)' : '16px'};
+  }
 `;
 
 export const Button = styled.button`

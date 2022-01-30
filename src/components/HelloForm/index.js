@@ -19,8 +19,8 @@ const HelloForm = () => {
 
   return (
     <FormContainer id="contact">
+      <ContactH3>Contact Me</ContactH3>
       <Form onSubmit={handleSubmit}>
-        <ContactH3>Contact Me</ContactH3>
         <TextInput placeholder="Email" id="email" name="email" required />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
         <TextArea

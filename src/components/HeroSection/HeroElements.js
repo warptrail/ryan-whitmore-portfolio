@@ -7,7 +7,7 @@ export const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  padding: 100px 30px;
+  padding: 60px 30px;
   height: 100vh;
   position: relative;
   z-index: 1;
@@ -28,6 +28,20 @@ export const HeroContainer = styled.div`
       ),
       linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
     z-index: 2;
+  }
+
+  @media screen and (min-width: 374px) {
+    /* padding: 90px 30px; */
+  }
+  
+
+  @media screen and (min-width: 768px) {
+    justify-content: left;
+    padding: 60px 100px;
+  }
+
+  @media screen and (min-width: 1100px) {
+    padding: 60px 30px;
   }
 `;
 
@@ -75,43 +89,78 @@ export const BackgroundOverlay = styled.div`
   overflow: hidden;
 `;
 
+export const HeroWrapper = styled.div`
+  max-width: 1100px;
+  z-index: 2;
+  margin: 100px auto;
+  width: 100%;
+`;
+
 export const HeroContent = styled.div`
   z-index: 3;
-  max-width: 1200px;
-  position: absolute;
-  padding: 8px 24px;
+  width: 100%;
+  max-width: 1100px;
+  /* position: absolute; */
+  display: flex;
+  padding: 8px 5px;
   flex-direction: column;
   align-items: center;
+  /* border: 1px solid red; */
+
+  @media screen and (min-width: 768px) {
+    align-items: inherit;
+    margin: auto 0;
+    justify-content: left;
+  }
+`;
+
+export const HeroWords = styled.div`
+  opacity: ${(props) => (props.cta ? '0%' : '100%')};
+  transition: 0.5s all ease-in-out;
 `;
 
 export const NameBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    justify-content: left;
+  }
 `;
 export const MyLogo = styled.img`
   width: 100%;
-  max-width: 700px;
-`;
-export const Name = styled.p`
-  color: #fff;
-  padding-left: 12px;
-  font-size: 1.5rem;
-  font-family: 'Roboto Condensed', sans-serif;
+  max-width: 600px;
+  /* border: 1px solid red; */
+
+  @media screen and (min-width: 768px) {
+    width: 50vw;
+    max-width: 580px;
+    z-index: 99;
+  }
 `;
 
 export const HeroH1 = styled.h1`
   color: #fff;
-  font-size: 46px;
+  /* font-size: 46px; */
+  font-size: clamp(2.125rem, 1.125rem + 5vw, 2.625rem);
   text-align: center;
-  margin-top: 24px;
+  margin-top: 30px;
 
-  @media screen and(min-width: 480px) {
-    font-size: 38px;
+  @media screen and (min-width: 375px) {
+    font-size: clamp(2.75rem, 0.9643rem + 7.619vw, 3.25rem);
+  }
+
+  @media screen and (min-width: 480px) {
+    /* padding: 0 10vw; */
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 68px;
+    /* font-size: clamp(2.5rem, -0.8488rem + 6.9767vw, 3.25rem); */
+    font-size: 58px;
+    text-align: left;
+    max-width: 500px;
+    /* padding: 0 30px; */
   }
 `;
 
@@ -140,29 +189,41 @@ export const HeroH2 = styled.h2`
 `;
 
 export const HeroP = styled.p`
-  margin-top: 2rem;
+  margin-top: 30px;
   color: #fff;
-  font-size: 30px;
+  /* padding: 0 30px; */
+  font-size: clamp(1.5rem, 0.75rem + 3.75vw, 1.875rem);
   text-align: center;
   font-family: 'Jost', sans-serif;
 
   line-height: 1.2;
 
-  @media screen and (min-width: 768px) {
-    font-size: 44px;
-    padding: 30px;
+  @media screen and (min-width: 375px) {
+    font-size: clamp(2.125rem, 0.7857rem + 5.7143vw, 2.5rem);
   }
 
-  @media screen and(min-width: 480px) {
-    font-size: 18px;
+  @media screen and (min-width: 480px) {
+    /* padding: 0 9vw; */
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+    text-align: left;
+    max-width: 400px;
+    /* padding: 0 30px; */
   }
 `;
 
 export const HeroBtnWrapper = styled.div`
-  margin-top: 32px;
+  margin-top: 52px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    justify-content: left;
+    align-items: flex-start;
+  }
 `;
 
 export const ArrowUp = styled(FaArrowUp)`
