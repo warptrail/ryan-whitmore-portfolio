@@ -4,7 +4,6 @@ import CallToAction from '../CallToAction';
 import {
   HeroContainer,
   HeroBg,
-  PhotoBg,
   BackgroundOverlay,
   HeroWrapper,
   HeroContent,
@@ -18,7 +17,7 @@ import {
   MyLogo
 } from './HeroElements';
 import { Button } from '../ButtonElement';
-import backgroundImage from '../../images/neon-background.png';
+// import backgroundImage from '../../images/neon-background.png';
 import myLogo from '../../images/ryanwhitmore.png';
 
 const HeroSection = () => {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FaArrowRight, FaArrowDown, FaArrowUp } from 'react-icons/fa';
+import { FaArrowRight, FaArrowUp } from 'react-icons/fa';
 import backgroundImage from '../../images/neon-background.png';
 
 export const HeroContainer = styled.div`

@@ -15,7 +15,7 @@ import {
   SiGit,
   SiAdobephotoshop
 } from 'react-icons/si';
-import { DiPhotoshop } from 'react-icons/di';
+
 import { FaBootstrap, FaNodeJs, FaNpm } from 'react-icons/fa';
 
 import {

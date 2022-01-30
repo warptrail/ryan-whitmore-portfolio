@@ -19,7 +19,6 @@ import {
 
 const BlogHero = () => {
   const [hover, setHover] = useState(false);
-  const [cta, setCta] = useState(false);
 
   const onHover = () => {
     setHover(!hover);

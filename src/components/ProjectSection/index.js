@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { scroller } from 'react-scroll';
+import React from 'react';
+// import { scroller } from 'react-scroll';
 
 import { H2 } from '../HeaderElements';
 

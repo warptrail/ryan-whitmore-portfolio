@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import InfoSection from '../components/InfoSection';
 import ProjectSection from '../components/ProjectSection';

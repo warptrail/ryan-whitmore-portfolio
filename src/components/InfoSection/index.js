@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '../ButtonElement';
 
 import {
   InfoContainer,
@@ -11,13 +10,11 @@ import {
   TopLine,
   Heading,
   AboutText,
-  BtnWrap,
   ImgWrap,
   Img,
   AboutLink,
   ContactContainer,
   ContactWrap,
-  ContactBtn,
   ContactBtnScroll,
   ContactBtnRoute
 } from './InfoElements';
@@ -33,16 +30,11 @@ const InfoSection = ({
   description1,
   description2,
   link,
-  buttonLabel,
+
   img,
-  alt,
-  primary,
-  dark,
-  dark2
+  alt
 }) => {
-  const onClickSayHello = () => {
-    console.log('Ahoy there!');
-  };
+  const onClickSayHello = () => {};
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>

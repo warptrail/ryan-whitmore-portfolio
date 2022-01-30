@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link as LinkRouter } from 'react-router-dom';
 
 import { FaGithub, FaEnvelope, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
@@ -35,7 +34,7 @@ export const SocialIconLink = styled.a`
 
   display: flex;
   font-size: ${(props) =>
-    props.tiny ? '34px' : 'clamp(2.925rem, 0.1906rem + 13.2222vw, 4rem)'};
+    props.tiny ? 'px' : 'clamp(2.925rem, 0.1906rem + 13.2222vw, 4rem)'};
 
   /* align-items: center; */
 
