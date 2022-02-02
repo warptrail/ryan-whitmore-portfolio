@@ -35,6 +35,8 @@ export const BioContainer = styled.div`
   background-color: #071200;
   color: #fff;
   padding-bottom: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
 `;
 
 export const BioTitle = styled.h3`
@@ -55,6 +57,12 @@ export const BioContent = styled.p`
   /* ${bioPadding} */
   font-size: 20px;
   margin: 20px 0;
+
+  @media screen and (min-width: 768px) {
+    font-size: clamp(1.2rem, 0.9217rem + 1.2048vw, 1.55rem);
+    line-height: 1.5;
+    max-width: 700px;
+  }
 `;
 
 export const BioList = styled.ol`
@@ -63,6 +71,10 @@ export const BioList = styled.ol`
 export const BioListContent = styled.li`
   padding-left: 0.5em;
   font-size: 18px;
+
+  @media screen and (min-width: 768px) {
+    font-size: clamp(1.3rem, 0.9217rem + 1.2048vw, 1.45rem);
+  }
 `;
 
 export const StackBox = styled.div`

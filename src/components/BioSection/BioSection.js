@@ -12,14 +12,20 @@ import { bioData } from '../../Data';
 const BioSection = () => {
   return (
     <BioContainer>
-      <BioTitle>More About Me</BioTitle>
-      <BioContent>{bioData.paragraph1}</BioContent>
-      <BioContent>{bioData.paragraph2}</BioContent>
+      <div id="bio">
+        <BioTitle>More About Me</BioTitle>
+        <BioContent>{bioData.paragraph1}</BioContent>
+        <BioContent>{bioData.paragraph2}</BioContent>
+      </div>
+
       <MyStack />
-      <BioTitle>Background</BioTitle>
-      <BioContent>{bioData.backgroundP1}</BioContent>
-      <BioContent>{bioData.backgroundP2}</BioContent>
-      <BioContent>{bioData.backgroundP3}</BioContent>
+      <div id="background">
+        <BioTitle>Background</BioTitle>
+        <BioContent>{bioData.backgroundP1}</BioContent>
+        <BioContent>{bioData.backgroundP2}</BioContent>
+        <BioContent>{bioData.backgroundP3}</BioContent>
+      </div>
+
       <BioList>
         {bioData.backgroundList.map((step, i) => (
           <BioListContent key={`blc-${i + 1}`}>{step}</BioListContent>

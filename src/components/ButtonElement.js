@@ -21,7 +21,7 @@ const buttonStyles = css`
   max-width: ${(props) => (props.fixedWidth ? '240px' : '350px')};
   margin-bottom: ${(props) =>
     props.marginBottom ? `${props.marginBottom}px` : '0'};
-
+  margin-top: ${(props) => (props.marginTop ? `${props.marginTop}px` : '0')};
   &:hover {
     color: black;
     transition: all 0.2s ease-in-out;

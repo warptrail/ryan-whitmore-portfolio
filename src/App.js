@@ -63,8 +63,20 @@ function App() {
         />
 
         <Route path="/contact" component={ContactPage} />
-        <Route path="/bio" component={BioPage} />
-        <Route path="/blog" component={BlogPage} />
+        <Route
+          path="/bio"
+          render={(props) => (
+            <BioPage {...props} setToggleScrollUp={setToggleScrollUp} />
+          )}
+          exact
+        />
+        <Route
+          path="/blog"
+          render={(props) => (
+            <BlogPage {...props} setToggleScrollUp={setToggleScrollUp} />
+          )}
+          exact
+        />
         <Route path="/projects" exact component={ProjectGalleryPage} />
         <Route path="/projects/:projectId" component={ProjectPage} />
       </Switch>

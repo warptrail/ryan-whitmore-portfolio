@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Jost&family=Roboto+Condensed&family=Skranji&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,6 +23,7 @@ body {
   font-family: 'Jost', sans-serif;
   font-family: 'Roboto Condensed', sans-serif;
   font-family: 'Skranji', cursive;
+  font-family: 'Merriweather', serif;
 }
 
 .fixed {

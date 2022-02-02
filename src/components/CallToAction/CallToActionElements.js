@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link as LinkRouter } from 'react-router-dom';
 import {
   FaPaperPlane,
   FaDownload,
@@ -91,7 +91,7 @@ const CtaButtonStyles = css`
   align-content: center;
 `;
 
-export const CtaLink = styled(Link)`
+export const CtaLinkRouter = styled(LinkRouter)`
   ${CtaButtonStyles}
 `;
 

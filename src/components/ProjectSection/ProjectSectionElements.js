@@ -9,33 +9,29 @@ export const ProjectContainer = styled.div`
   align-items: center; */
   /* background: #010606; */
   background: #37022c;
-  padding-top: ${(props) => (props.marginTop ? '20px' : '0')};
+  padding-top: ${(props) => (props.marginTop ? '80px' : '0')};
 `;
 
 export const ProjectWrapper = styled.div`
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 10px 5px;
   display: grid;
-  /* grid-template-columns: 1fr; */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  /* align-items: center; */
-  gap: 16px;
-  /* grid-auto-rows: 1fr; */
+  grid-template-columns: 1fr;
+  gap: 8px;
 
-  @media screen and (min-width: 626px) {
-    gap: 12px;
+  @media screen and (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
   }
 
-  /* @media screen and (min-width: 700px) {
-    grid-template-columns: 1fr 1fr;
+  @media screen and (min-width: 768px) {
     padding: 40px 20px;
   }
 
-  @media screen and (min-width: 968px) {
+  @media screen and (min-width: 1100px) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: 1fr;
-  } */
+  }
 `;
 
 export const ProjectCard = styled.div`
@@ -67,25 +63,24 @@ export const ProjectCard = styled.div`
 `;
 
 export const ProjectIcon = styled.img`
-  height: 160px;
-  width: 160px;
+  width: 60%;
   margin-bottom: 10px;
   pointer-events: none;
 `;
 
 export const ProjectH3 = styled.h3`
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 0.7857rem + 3.5714vw, 2.125rem);
   color: #030808;
   margin-bottom: 10px;
   text-align: center;
   pointer-events: none;
 
-  @media screen and (min-width: 480px) {
-    font-size: 2rem;
+  @media screen and (min-width: 600px) {
+    font-size: clamp(1.5rem, -0.2857rem + 4.7619vw, 2rem);
   }
 
   @media screen and (min-width: 940px) {
-    font-size: 2.1rem;
+    font-size: clamp(1.75rem, 0.2955rem + 3.0303vw, 2rem);
   }
 `;
 
@@ -95,7 +90,20 @@ export const ProjectP = styled.p`
   text-align: left;
   color: black;
   pointer-events: none;
-  margin-bottom: 15px;
+  margin-top: 18px;
+  margin-bottom: 25px;
+
+  @media screen and (min-width: 600px) {
+    font-size: clamp(1.125rem, -0.2143rem + 3.5714vw, 1.5rem);
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: clamp(1.25rem, -1.2955rem + 5.303vw, 1.2875rem);
+  }
+
+  @media screen and (min-width: 1100px) {
+    font-size: 19px;
+  }
 `;
 
 export const ProjectBtn = styled.a`

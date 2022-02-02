@@ -72,6 +72,7 @@ const InfoSection = ({
                 </ContactContainer>
               </ContactWrap>
             </Column1>
+
             <Column2>
               <TextWrapper>
                 <ImgWrap>

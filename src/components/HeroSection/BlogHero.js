@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Button } from '../ButtonElement';
 
-import myLogo from '../../images/ryanwhitmore.png';
+import trextet from '../../images/trextet.png';
+import constructionGif from '../../images/construction.gif';
 
 import {
   BackgroundOverlay,
@@ -14,11 +15,16 @@ import {
   MyLogo,
   NameBox,
   ArrowUp,
-  ArrowRight
+  ArrowRight,
+  HeroWrapper,
+  DontClick,
+  ConstructionFrame,
+  Gif
 } from './HeroElements';
 
 const BlogHero = () => {
   const [hover, setHover] = useState(false);
+  const [dontClick, setDontClick] = useState(false);
 
   const onHover = () => {
     setHover(!hover);
@@ -29,27 +35,43 @@ const BlogHero = () => {
       <HeroBg>
         <BackgroundOverlay />
       </HeroBg>
-      <HeroContent>
-        <NameBox>
-          <MyLogo src={myLogo} />
-        </NameBox>
-        <HeroH1>The Blog</HeroH1>
-        <HeroP>Wow, such reading. Very impressed.</HeroP>
-        <HeroBtnWrapper>
-          <Button
-            fontBig
-            big
-            smooth={true}
-            duration={500}
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
-            primary="true"
-            dark="true"
-          >
-            Read More {hover ? <ArrowUp /> : <ArrowRight />}
-          </Button>
-        </HeroBtnWrapper>
-      </HeroContent>
+      <HeroWrapper>
+        <HeroContent>
+          <NameBox>
+            <MyLogo src={trextet} />
+          </NameBox>
+          <HeroH1>The Blog</HeroH1>
+          <HeroP construction>
+            The Blog is currently under construction. Expect an entry in March
+            of 2022.
+          </HeroP>
+          <ConstructionFrame>
+            <Gif src={constructionGif} />
+          </ConstructionFrame>
+          <HeroBtnWrapper>
+            <Button
+              fontBig
+              big
+              smooth={true}
+              duration={500}
+              onMouseEnter={onHover}
+              onMouseLeave={onHover}
+              primary="true"
+              dark="true"
+              onClick={() => setDontClick(!dontClick)}
+            >
+              Do not click {hover ? <ArrowUp /> : <ArrowRight />}
+            </Button>
+          </HeroBtnWrapper>
+          {dontClick ? (
+            <DontClick style={{ marginTop: '20px' }}>
+              This button does nothing. Click again to do nothing again.
+            </DontClick>
+          ) : (
+            ''
+          )}
+        </HeroContent>
+      </HeroWrapper>
     </HeroContainer>
   );
 };

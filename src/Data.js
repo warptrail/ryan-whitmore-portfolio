@@ -74,9 +74,9 @@ export const projectData = [
   },
   {
     id: 'project-3',
-    name: 'Tracker-400',
-    link: '/projects/tracker-400',
-    param: 'tracker-400',
+    name: 'Tracker-350',
+    link: '/projects/tracker-350',
+    param: 'tracker-350',
     description:
       'A time and habit tracker. Currently still in development. Uses dayjs to create an interactive calendar to visualize when a reoccurring event happens. Analyzes the count, frequency across time-spans.',
     icon: trackerLogo,
@@ -88,8 +88,8 @@ export const projectData = [
       `The landing page is the universal dashboard for tracking time. Break down large units of time into their smaller components to track when you are along the year, month, week and day progress bars.`,
       `There is a calendar highlighting the current day. There is a live clock ticking the seconds. At the bottom of the page the user can copy either the ISO8601 Format of the current moment or the seconds elapsed since the Epoch.`
     ],
-    repoLink: 'https://github.com/warptrail/currency-toolkit',
-    demoLink: 'https://currency-toolkit-warptrail.vercel.app/',
+    repoLink: 'https://github.com/warptrail/tracker-350',
+    demoLink: 'https://tracker-350.vercel.app/',
     screenshots: [project3Screenshot1, project3Screenshot2]
   },
 

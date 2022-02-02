@@ -68,7 +68,9 @@ const ProjectSection = ({ marginTop }) => {
 
   return (
     <ProjectContainer id="projects" className="projects" marginTop>
-      <H2 center>{headerText}</H2>
+      <H2 wideText center>
+        {headerText}
+      </H2>
       {renderProjectSection()}
     </ProjectContainer>
   );

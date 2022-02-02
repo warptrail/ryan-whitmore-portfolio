@@ -34,7 +34,7 @@ export const SocialIconLink = styled.a`
 
   display: flex;
   font-size: ${(props) =>
-    props.tiny ? 'px' : 'clamp(2.925rem, 0.1906rem + 13.2222vw, 4rem)'};
+    props.tiny ? '34px' : 'clamp(2.925rem, 0.1906rem + 13.2222vw, 4rem)'};
 
   /* align-items: center; */
 

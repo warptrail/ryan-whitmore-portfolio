@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import Socials from '../Socials';
 
 import {
   MobNavContainer,
@@ -19,7 +20,14 @@ const MobileNav = ({ isNavOpen, toggle, handleToggleScrollUp }) => {
     return (
       <MenuUl>
         <MenuLi>
-          <MenuScrollLink to="top" onClick={toggle} smooth={true}>
+          <MenuScrollLink
+            to="top"
+            smooth={true}
+            onClick={() => {
+              toggle();
+              handleToggleScrollUp();
+            }}
+          >
             Home
           </MenuScrollLink>
         </MenuLi>
@@ -43,7 +51,9 @@ const MobileNav = ({ isNavOpen, toggle, handleToggleScrollUp }) => {
             Contact
           </MenuScrollLink>
         </MenuLi>
-        <MenuLi>Blog</MenuLi>
+        <MenuLi>
+          <Socials />
+        </MenuLi>
       </MenuUl>
     );
   };
@@ -55,6 +65,41 @@ const MobileNav = ({ isNavOpen, toggle, handleToggleScrollUp }) => {
           <MenuRouteLink to="/" onClick={() => handleToggleScrollUp()}>
             Home
           </MenuRouteLink>
+          <MenuLi>
+            <MenuScrollLink
+              to="bio"
+              smooth={true}
+              offset={-80}
+              onClick={toggle}
+            >
+              About
+            </MenuScrollLink>
+          </MenuLi>
+
+          <MenuLi>
+            <MenuScrollLink
+              to="myStack"
+              smooth={true}
+              offset={-80}
+              onClick={toggle}
+            >
+              My Stack
+            </MenuScrollLink>
+          </MenuLi>
+
+          <MenuLi>
+            <MenuScrollLink
+              to="background"
+              smooth={true}
+              offset={-80}
+              onClick={toggle}
+            >
+              Background
+            </MenuScrollLink>
+          </MenuLi>
+          <MenuLi>
+            <Socials />
+          </MenuLi>
         </MenuLi>
       </MenuUl>
     );
@@ -64,7 +109,10 @@ const MobileNav = ({ isNavOpen, toggle, handleToggleScrollUp }) => {
     if (currentUrl.pathname === '/') {
       return homePageMobNav();
     }
-    return bioPageMobNav();
+    if (currentUrl.pathname === '/bio') {
+      return bioPageMobNav();
+    }
+    return <div>sup</div>;
   };
 
   return (

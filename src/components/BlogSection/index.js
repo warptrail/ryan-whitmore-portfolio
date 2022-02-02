@@ -1,14 +1,25 @@
 import React from 'react';
 
 // Blog Content Data
-import { WorkBlog } from './BlogData';
+import { WorkBlog, pirateArray } from './BlogData';
 
-import { BlogContainer } from './BlogSectionElements';
+import {
+  BlogContainer,
+  BlogH2,
+  BlogContent,
+  BlogP
+} from './BlogSectionElements';
 
 const BlogSection = () => {
+  console.log(pirateArray);
   return (
     <BlogContainer>
-      <h2>{WorkBlog}</h2>
+      <BlogH2>{WorkBlog}</BlogH2>
+      <BlogContent>
+        {pirateArray.map((p, i) => (
+          <BlogP key={`pirate-${i}`}>{p}</BlogP>
+        ))}
+      </BlogContent>
     </BlogContainer>
   );
 };

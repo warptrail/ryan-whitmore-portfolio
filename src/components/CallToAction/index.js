@@ -5,7 +5,7 @@ import {
   PopupBox,
   PopupFooter,
   PopupP,
-  CtaLink,
+  CtaLinkRouter,
   CtaButton,
   RetractButton,
   PaperPlaneIcon,
@@ -24,14 +24,16 @@ import qrImg from '../../images/qr.png';
 
 const CallToAction = ({ cta, closePopup }) => {
   const [qrActive, setQrActive] = useState(false);
-  const topRef = useRef(null);
+
+  const myRef = useRef(null);
+  const executeScroll = () => {
+    myRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // window.scrollBy(100, 0);
+  };
+
   const onClickQr = () => {
     setQrActive(true);
-    window.scrollBy({
-      top: 200,
-      left: 0,
-      behavior: 'smooth'
-    });
+    executeScroll();
   };
 
   const renderCtaPanel = () => {
@@ -51,10 +53,10 @@ const CallToAction = ({ cta, closePopup }) => {
     }
     return (
       <CtaButtonBox>
-        <CtaLink to="contact">
+        <CtaLinkRouter to="contact">
           <CtaButtonSpan> Send a message</CtaButtonSpan>
           <PaperPlaneIcon />{' '}
-        </CtaLink>
+        </CtaLinkRouter>
         <CtaAnchorLink href="https://protected-crag-63612.herokuapp.com/download/resume">
           <CtaButtonSpan>My Resume</CtaButtonSpan>
           <DownloadIcon />
@@ -68,7 +70,7 @@ const CallToAction = ({ cta, closePopup }) => {
   };
 
   return (
-    <PopupBox ref={topRef} cta={cta} qr={qrActive}>
+    <PopupBox cta={cta} qr={qrActive} ref={myRef}>
       {qrActive ? (
         ''
       ) : (

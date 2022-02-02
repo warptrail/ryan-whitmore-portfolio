@@ -57,7 +57,7 @@ const MyStack = () => {
   ));
 
   return (
-    <StackBox>
+    <StackBox id="stack">
       <BioTitle>My Stack</BioTitle>
       <StackList>{generateStack}</StackList>
     </StackBox>

@@ -8,12 +8,16 @@ import {
   MyLogo,
   HeroH1,
   HeroH2,
+  HeroList,
+  HeroListItem,
   HeroP,
-  HeroBtnWrapper
+  HeroBtnWrapper,
+  HeroWrapper,
+  MyLogoLinkFrame
 } from './HeroElements';
 
 import myLogo from '../../images/ryanwhitmore.png';
-import { Button } from '../ButtonElement';
+import { ScrollButton } from '../ButtonElement';
 
 const AltHero = () => {
   return (
@@ -21,21 +25,40 @@ const AltHero = () => {
       <HeroBg>
         <BackgroundOverlay />
       </HeroBg>
-      <HeroContent>
-        <NameBox>
-          <MyLogo src={myLogo} />
-        </NameBox>
-        <HeroH1>More Information</HeroH1>
-        <HeroH2>Services Offered</HeroH2>
-        <HeroP>Development</HeroP>
-        <HeroP>Design</HeroP>
-        <HeroP>Data</HeroP>
-        <HeroBtnWrapper>
-          <Button fontBig big primary dark>
-            Learn More
-          </Button>
-        </HeroBtnWrapper>
-      </HeroContent>
+      <HeroWrapper>
+        <HeroContent>
+          <MyLogoLinkFrame to="/">
+            <NameBox>
+              <MyLogo src={myLogo} />
+            </NameBox>
+          </MyLogoLinkFrame>
+
+          <HeroH1>Services Offered:</HeroH1>
+
+          <HeroList>
+            <HeroListItem>Development</HeroListItem>
+            <HeroListItem>Design</HeroListItem>
+            <HeroListItem>Data</HeroListItem>
+          </HeroList>
+          <HeroBtnWrapper>
+            <ScrollButton
+              fontBig
+              big
+              primary
+              dark
+              to="bio"
+              smooth={true}
+              duration={500}
+              activeClass="active"
+              spy={true}
+              exact="true"
+              offset={-80}
+            >
+              Learn More
+            </ScrollButton>
+          </HeroBtnWrapper>
+        </HeroContent>
+      </HeroWrapper>
     </HeroContainer>
   );
 };

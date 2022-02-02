@@ -82,4 +82,6 @@ export const MenuScrollLink = styled(LinkScroll)`
 
 export const MenuRouteLink = styled(LinkRouter)`
   cursor: pointer;
+  color: #fff;
+  text-decoration: none;
 `;

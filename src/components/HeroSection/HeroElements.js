@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { FaArrowRight, FaArrowUp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 import backgroundImage from '../../images/neon-background.png';
 
 export const HeroContainer = styled.div`
@@ -7,12 +9,11 @@ export const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  padding: 60px 30px;
+  padding: 10px 30px;
   height: 100vh;
   position: relative;
   z-index: 1;
   /* opacity: ${(props) => (props.cta ? '30%' : '100%')}; */
-
 
   :before {
     content: '';
@@ -31,7 +32,7 @@ export const HeroContainer = styled.div`
   }
 
   @media screen and (min-width: 374px) {
-    /* padding: 90px 30px; */
+    padding: 30px 30px;
   }
   
 
@@ -130,7 +131,7 @@ export const NameBox = styled.div`
 `;
 export const MyLogo = styled.img`
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   /* border: 1px solid red; */
 
   @media screen and (min-width: 768px) {
@@ -139,6 +140,8 @@ export const MyLogo = styled.img`
     z-index: 99;
   }
 `;
+
+export const MyLogoLinkFrame = styled(Link)``;
 
 export const HeroH1 = styled.h1`
   color: #fff;
@@ -190,7 +193,9 @@ export const HeroH2 = styled.h2`
 
 export const HeroP = styled.p`
   margin-top: 30px;
-  color: #fff;
+  color: ${({ construction }) => (construction ? '#EFB335' : '#fff')};
+  background-color: ${({ construction }) =>
+    construction ? 'black' : 'transparent'};
   /* padding: 0 30px; */
   font-size: clamp(1.5rem, 0.75rem + 3.75vw, 1.875rem);
   text-align: center;
@@ -206,11 +211,40 @@ export const HeroP = styled.p`
     /* padding: 0 9vw; */
   }
 
+  @media screen and (min-width: 600px) {
+    padding: 30px 70px;
+  }
+
   @media screen and (min-width: 768px) {
     font-size: 28px;
     text-align: left;
     max-width: 400px;
-    /* padding: 0 30px; */
+    padding: 0;
+  }
+`;
+
+export const HeroList = styled.ul`
+  margin: 0;
+  margin-top: 25px;
+  padding: 0;
+  list-style: none;
+
+  @media screen and (min-width: 768px) {
+    align-self: flex-start;
+  }
+`;
+
+export const HeroListItem = styled.li`
+  color: #fff;
+  font-size: clamp(2rem, 1.7321rem + 1.3393vw, 2.375rem);
+  text-align: center;
+  font-family: 'Jost', sans-serif;
+  line-height: 1.2;
+  margin: 20px;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+    margin: 10px;
   }
 `;
 
@@ -234,4 +268,19 @@ export const ArrowUp = styled(FaArrowUp)`
 export const ArrowRight = styled(FaArrowRight)`
   margin-left: 8px;
   font-size: 20px;
+`;
+
+export const DontClick = styled.div`
+  margin-top: 20px;
+  font-size: clamp(2rem, 1.7321rem + 1.3393vw, 2.375rem);
+  text-align: center;
+`;
+
+export const ConstructionFrame = styled.div`
+  width: 30%;
+  min-width: 400px;
+`;
+
+export const Gif = styled.img`
+  width: 100%;
 `;

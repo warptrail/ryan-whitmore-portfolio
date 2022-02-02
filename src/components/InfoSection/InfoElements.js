@@ -6,7 +6,7 @@ export const InfoContainer = styled.div`
   color: #fff;
   background: ${({ lightBg }) => (lightBg ? '#f9f9f9' : '#010606')};
   @media screen and (max-width: 768px) {
-    padding: 100px 0;
+    padding: 20px 0;
   }
 `;
 
@@ -99,6 +99,7 @@ export const ImgWrap = styled.div`
   max-width: 400px;
   height: 100%;
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  margin: 0 auto;
 `;
 
 export const Img = styled.img`

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import BioSection from '../components/BioSection/BioSection';
 import AltHero from '../components/HeroSection/AltHero';
 
-const BioPage = () => {
+const BioPage = ({ setToggleScrollUp }) => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -13,10 +13,10 @@ const BioPage = () => {
   }, []);
 
   return (
-    <>
+    <div style={{ background: '#091200' }}>
       <AltHero />
       <BioSection />
-    </>
+    </div>
   );
 };
 

@@ -1,75 +1,84 @@
 import React from 'react';
 
 import {
-  ProjectSection,
-  PrjH1,
-  PrjH2,
-  PrjContent,
+  ProjectContainer,
+  ProjectWrapper,
+  ProjectRow,
+  ProjectRow2,
+  Column1,
+  Column2,
+  Column3,
+  TextWrapper,
+  Heading,
+  ProjectText,
+  TopLine,
+  ProjectLogo,
+  LinkContainer,
+  ProjectLinkWrapper,
+  ProjectLink,
+  IconGithub,
+  IconPlay,
   ScreenshotGallery,
   ScreenshotFrame,
   Screenshot
 } from './ProjectElements';
 
-import {
-  LinkBox,
-  ProjectLink,
-  IconGithub,
-  IconPlay
-} from '../ProjectSection/ProjectSectionElements';
-import { RouterButton, IconArrowLeft, ButtonWrap } from '../ButtonElement';
-
 const Project = ({ project }) => {
   return (
-    <ProjectSection>
-      <ButtonWrap primary dark fixedWidth marginBottom={22} side>
-        <RouterButton to="/projects">
-          <IconArrowLeft /> Project Gallery
-        </RouterButton>
-      </ButtonWrap>
+    <ProjectContainer>
+      <ProjectWrapper>
+        <ProjectRow>
+          <Column1>
+            <TextWrapper>
+              <TopLine>Project Spotlight</TopLine>
+              <Heading lightText> {project.name}</Heading>
+              <ProjectLogo src={project.icon} alt="project logo" />
+            </TextWrapper>
+          </Column1>
 
-      <PrjH1>{project.name}</PrjH1>
-      {/* If links exist, generate them here */}
-      <LinkBox>
-        {project.repoLink ? (
-          <ProjectLink
-            href={project.repoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Repo <IconGithub />
-          </ProjectLink>
-        ) : (
-          ''
-        )}
-        {project.demoLink ? (
-          <ProjectLink
-            href={project.demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Demo <IconPlay />
-          </ProjectLink>
-        ) : (
-          ''
-        )}
-      </LinkBox>
-      <img src={project.icon} alt="logo" />
+          <Column2>
+            <LinkContainer>
+              <ProjectLinkWrapper>
+                <ProjectLink
+                  href={project.repoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Repo <IconGithub />
+                </ProjectLink>
+              </ProjectLinkWrapper>
+              <ProjectLinkWrapper>
+                <ProjectLink
+                  href={project.demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Demo <IconPlay />{' '}
+                </ProjectLink>
+              </ProjectLinkWrapper>
+            </LinkContainer>
+            <TextWrapper>
+              {project.detail.map((p, i) => (
+                <ProjectText key={`prjtxt-${i}`}>{p}</ProjectText>
+              ))}
+            </TextWrapper>
+          </Column2>
+        </ProjectRow>
 
-      <PrjH2>Screenshots</PrjH2>
-      <ScreenshotGallery>
-        {project.screenshots
-          ? project.screenshots.map((pic, i) => (
-              <ScreenshotFrame key={`prjScreenshot-${i + 1}`}>
-                <Screenshot src={pic} />
-              </ScreenshotFrame>
-            ))
-          : ''}
-      </ScreenshotGallery>
-      <PrjH2>More Detail</PrjH2>
-      {project.detail.map((p, i) => (
-        <PrjContent key={`prjDetail-${i + 1}`}>{p}</PrjContent>
-      ))}
-    </ProjectSection>
+        <ProjectRow2>
+          <Column3>
+            <TopLine>Screenshots</TopLine>
+            <ScreenshotGallery>
+              {project.screenshots.map((img, i) => (
+                <ScreenshotFrame key={`scrnsht-${i}`}>
+                  <Screenshot src={img} />
+                </ScreenshotFrame>
+              ))}
+            </ScreenshotGallery>
+          </Column3>
+        </ProjectRow2>
+      </ProjectWrapper>
+    </ProjectContainer>
   );
 };
 
